@@ -13,7 +13,7 @@ if (!isset($_SESSION['admin'])) {
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/admin.css">
+    <link rel="stylesheet" href="/assets/css/admin.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -57,7 +57,7 @@ if (!isset($_SESSION['admin'])) {
         <ul class="navbar-nav nav-right d-flex flex-row align-items-center justify-content-between">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="user-img" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="../../assets/img/user.png" width="40" height="40" class="rounded-circle">
+                    <img src="/assets/img/user.png" width="40" height="40" class="rounded-circle">
                 </a>
                 <div class="dropdown-menu" aria-labelledby="user-img" style="position: absolute;left: auto;">
                     <a class="dropdown-item" href="#"><i class="fas fa-cog" style="padding-right: 20px;"></i>Settings</a>
@@ -146,7 +146,7 @@ if (!isset($_SESSION['admin'])) {
                 <div class="card">
                     <div class="card-header">
                         <h3 id="titleTable">
-                            Staff
+                            Staff table
                         </h3>
                     </div>
                     <div class="card-content">
@@ -157,6 +157,10 @@ if (!isset($_SESSION['admin'])) {
                                 <th>Profile</th>
                                 <th>Email</th>
                                 <th>Phone</th>
+                                <th>HTML</th>
+                                <th>CSS</th>
+                                <th>PHP</th>
+                                <th>JS</th>
                                 <th>URL</th>
                                 <th class="text-align:center">Detail</th>
                                 <th></th>
@@ -182,11 +186,15 @@ if (!isset($_SESSION['admin'])) {
                                         $profile,
                                         $email,
                                         $phone,
+                                        $html,
+                                        $css,
+                                        $php,
+                                        $javascript,
                                         $detail,
                                         $url
                                     );
                                     while ($stmt->fetch()) {
-                                        array_push($staff, array($id, $name, $profile, $email, $phone, $url, $detail));
+                                        array_push($staff, array($id, $name, $profile, $email, $phone, $html, $css, $php, $javascript, $url, $detail));
                             ?>
                                         <tr>
                                             <td><?php echo $id ?></td>
@@ -194,8 +202,12 @@ if (!isset($_SESSION['admin'])) {
                                             <td><?php echo $profile ?></td>
                                             <td><?php echo $email ?></td>
                                             <td><?php echo $phone ?></td>
+                                            <td><?php echo $html ?></td>
+                                            <td><?php echo $css ?></td>
+                                            <td><?php echo $php ?></td>
+                                            <td><?php echo $javascript ?></td>
                                             <td><?php echo $url ?></td>
-                                            <td style="width: 30%"><?php echo $detail ?></td>
+                                            <td><?php echo $detail ?></td>
                                             <td><button class="btn btn-primary" data-toggle="modal" data-target="#staffEditModal<?php echo $id ?>">Edit</button></td>
                                             <td><button class="btn btn-danger" onclick="deleteStaff(<?php echo $id ?>)">Delete</button></td>
                                         </tr>
@@ -227,6 +239,13 @@ if (!isset($_SESSION['admin'])) {
                 </div>
                 <div class="modal-body">
                     <form>
+                        <div class="form-group row align-items-center">
+                            <label for="id" class="col-2 col-form-label"><strong>ID</strong></label>
+                            <div class="col-10">
+                                <input class="form-control" type="text" value="" id="id">
+                            </div>
+                            <span class="text-danger" id="idErr"></span>
+                        </div>
                         <div class="form-group row align-items-center justify-content-center">
                             <label for="name" class="col-2 col-form-label"><strong>Full name</strong></label>
                             <div class="col-10">
@@ -255,18 +274,40 @@ if (!isset($_SESSION['admin'])) {
                             </div>
                             <span class="text-danger" id="phoneErr"></span>
                         </div>
+                        <div class="form-group row align-items-center justify-content-center">
+                            <label for="html" class="col-2 col-form-label"><strong>HTML</strong></label>
+                            <div class="col-10">
+                                <input class="form-control" type="number" min="0" max="100" value="" id="html">
+                            </div>
+                            <span class="text-danger" id="htmlErr"></span>
+                        </div>
+                        <div class="form-group row align-items-center justify-content-center">
+                            <label for="css" class="col-2 col-form-label"><strong>CSS</strong></label>
+                            <div class="col-10">
+                                <input class="form-control" type="number" min="0" max="100" value="" id="css">
+                            </div>
+                            <span class="text-danger" id="cssErr"></span>
+                        </div>
+
+                        <div class="form-group row align-items-center justify-content-center">
+                            <label for="php" class="col-2 col-form-label"><strong>PHP</strong></label>
+                            <div class="col-10">
+                                <input class="form-control" type="number" min="0" max="100" value="" id="php">
+                            </div>
+                            <span class="text-danger" id="phpErr"></span>
+                        </div>
                         <div class="form-group row align-items-center">
                             <label for="details" class="col-2 col-form-label"><strong>Detail</strong></label>
                             <div class="col-10">
-                                <textarea rows="5" class="form-control" type="" value="" id="detail"></textarea>
+                                <textarea class="form-control" type="" value="" id="detail"></textarea>
                             </div>
                             <span class="text-danger" id="detailErr"></span>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success" onclick="addStaff()">Add</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="addStaff()">Add</button>
                 </div>
             </div>
         </div>
@@ -323,24 +364,52 @@ if (!isset($_SESSION['admin'])) {
                                 <span class="text-danger" id="phoneErr"></span>
                             </div>
                             <div class="form-group row align-items-center justify-content-center">
+                                <label for="html-edit-<?php echo $staff[$index][0]; ?>" class="col-2 col-form-label"><strong>HTML</strong></label>
+                                <div class="col-10">
+                                    <input class="form-control" type="number" min="0" max="100" value="<?php echo $staff[$index][5]; ?>" id="html-edit-<?php echo $staff[$index][0]; ?>">
+                                </div>
+                                <span class="text-danger" id="htmlErr"></span>
+                            </div>
+                            <div class="form-group row align-items-center justify-content-center">
+                                <label for="css-edit-<?php echo $staff[$index][0]; ?>" class="col-2 col-form-label"><strong>CSS</strong></label>
+                                <div class="col-10">
+                                    <input class="form-control" type="number" min="0" max="100" value="<?php echo $staff[$index][6]; ?>" id="css-edit-<?php echo $staff[$index][0]; ?>">
+                                </div>
+                                <span class="text-danger" id="cssErr"></span>
+                            </div>
+                            <div class="form-group row align-items-center justify-content-center">
+                                <label for="php-edit-<?php echo $staff[$index][0]; ?>" class="col-2 col-form-label"><strong>PHP</strong></label>
+                                <div class="col-10">
+                                    <input class="form-control" type="number" min="0" max="100" value="<?php echo $staff[$index][7]; ?>" id="php-edit-<?php echo $staff[$index][0]; ?>">
+                                </div>
+                                <span class="text-danger" id="phpErr"></span>
+                            </div>
+                            <div class="form-group row align-items-center justify-content-center">
+                                <label for="javascript-edit-<?php echo $staff[$index][0]; ?>" class="col-2 col-form-label"><strong>Javascript</strong></label>
+                                <div class="col-10">
+                                    <input class="form-control" type="number" min="0" max="100" value="<?php echo $staff[$index][8]; ?>" id="javascript-edit-<?php echo $staff[$index][0]; ?>">
+                                </div>
+                                <span class="text-danger" id="phpErr"></span>
+                            </div>
+                            <div class="form-group row align-items-center justify-content-center">
                                 <label for="url-edit-<?php echo $staff[$index][0]; ?>" class="col-2 col-form-label"><strong>URL</strong></label>
                                 <div class="col-10">
-                                    <input class="form-control" type="text" min="0" max="100" value="<?php echo $staff[$index][5]; ?>" id="url-edit-<?php echo $staff[$index][0]; ?>">
+                                    <input class="form-control" type="text" min="0" max="100" value="<?php echo $staff[$index][9]; ?>" id="url-edit-<?php echo $staff[$index][0]; ?>">
                                 </div>
                                 <span class="text-danger" id="phpErr"></span>
                             </div>
                             <div class="form-group row align-items-center">
                                 <label for="details-edit-<?php echo $staff[$index][0]; ?>" class="col-2 col-form-label"><strong>Detail</strong></label>
                                 <div class="col-10">
-                                    <textarea rows="5" class="form-control" type="" id="detail-edit-<?php echo $staff[$index][0]; ?>"><?php echo $staff[$index][10]; ?></textarea>
+                                    <textarea class="form-control" type="" id="detail-edit-<?php echo $staff[$index][0]; ?>"><?php echo $staff[$index][10]; ?></textarea>
                                 </div>
                                 <span class="text-danger" id="detailErr"></span>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-success" onclick="editStaff(<?php echo $staff[$index][0]; ?>)">Edit</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="editStaff(<?php echo $staff[$index][0]; ?>)">Edit</button>
                     </div>
                 </div>
             </div>
@@ -351,12 +420,13 @@ if (!isset($_SESSION['admin'])) {
     <!-- end main content -->
     <!-- import script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="js/home.js"></script>
     <!-- end import script -->
 </body>
 
 <!-- import script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-<script src="../../assets/js/admin.js"></script>
+<script src="/assets/js/admin.js"></script>
 <!-- end import script -->
 
 

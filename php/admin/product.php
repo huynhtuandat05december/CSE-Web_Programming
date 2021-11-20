@@ -15,7 +15,7 @@ if (!isset($_SESSION['admin'])) {
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/admin.css">
+    <link rel="stylesheet" href="/assets/css/admin.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -59,7 +59,7 @@ if (!isset($_SESSION['admin'])) {
         <ul class="navbar-nav nav-right d-flex flex-row align-items-center justify-content-between">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="user-img" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="../../assets/img/user.png" width="40" height="40" class="rounded-circle">
+                    <img src="/assets/img/user.png" width="40" height="40" class="rounded-circle">
                 </a>
                 <div class="dropdown-menu" aria-labelledby="user-img" style="position: absolute;left: auto;">
                     <a class="dropdown-item" href="#"><i class="fas fa-cog" style="padding-right: 20px;"></i>Settings</a>
@@ -73,7 +73,7 @@ if (!isset($_SESSION['admin'])) {
     <!-- end navbar -->
 
     <!-- sidebar -->
-    <div class="sidebar" style="margin-top: 47px;">
+    <div class="sidebar">
         <ul class="sidebar-nav">
             <li class="sidebar-nav-item">
                 <a href="dashboard.php" class="sidebar-nav-link">
@@ -292,8 +292,8 @@ if (!isset($_SESSION['admin'])) {
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success" onclick="addProduct()">Add</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="addProduct()">Add</button>
                 </div>
             </div>
         </div>
@@ -316,7 +316,7 @@ if (!isset($_SESSION['admin'])) {
                             <div class="form-group row align-items-center">
                                 <label for="id-edit-<?php echo $product[$index][0]; ?>" class="col-2 col-form-label"><strong>ID</strong></label>
                                 <div class="col-10">
-                                    <input disabled class="form-control" type="text" value="<?php echo $product[$index][0]; ?>" id="id-edit-<?php echo $product[$index][0]; ?>">
+                                    <input class="form-control" type="text" value="<?php echo $product[$index][0]; ?>" id="id-edit-<?php echo $product[$index][0]; ?>">
                                 </div>
                                 <span class="text-danger" id="idErr"></span>
                             </div>
@@ -358,8 +358,8 @@ if (!isset($_SESSION['admin'])) {
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-success" onclick="editProduct(<?php echo $product[$index][0]; ?>)">Save</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="editProduct(<?php echo $product[$index][0]; ?>)">Save</button>
                     </div>
                 </div>
             </div>
@@ -376,7 +376,7 @@ if (!isset($_SESSION['admin'])) {
 
 <!-- import script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-<script src="../../assets/js/admin.js"></script>
+<script src="/assets/js/admin.js"></script>
 <!-- end import script -->
 
 

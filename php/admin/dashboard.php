@@ -14,7 +14,7 @@ if (!isset($_SESSION['admin'])) {
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/admin.css">
+    <link rel="stylesheet" href="/assets/css/admin.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -58,7 +58,7 @@ if (!isset($_SESSION['admin'])) {
         <ul class="navbar-nav nav-right d-flex flex-row align-items-center justify-content-between">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="user-img" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="../../assets/img/user.png" width="40" height="40" class="rounded-circle">
+                    <img src="/assets/img/user.png" width="40" height="40" class="rounded-circle">
                 </a>
                 <div class="dropdown-menu" aria-labelledby="user-img" style="position: absolute;left: auto;">
                     <a class="dropdown-item" href="#"><i class="fas fa-cog" style="padding-right: 20px;"></i>Settings</a>
@@ -242,8 +242,8 @@ if (!isset($_SESSION['admin'])) {
                             </tr>
                         </table>
                         <div class="col d-flex justify-content-end">
-                            <button class="btn btn-dark mx-3" data-toggle="modal" data-target="#profileModal">Edit profile</button>
-                            <button class="btn btn-dark mr-2" data-toggle="modal" data-target="#passwordModal">Change password</button>
+                            <button class="btn btn-outline-primary mx-3" data-toggle="modal" data-target="#profileModal">Edit profile</button>
+                            <button class="btn btn-outline-primary mr-2" data-toggle="modal" data-target="#passwordModal">Change password</button>
                         </div>
                     </div>
                 </div>
@@ -286,7 +286,7 @@ if (!isset($_SESSION['admin'])) {
                             </tr>
                         </table>
                         <div class="col d-flex justify-content-end">
-                            <button class="btn btn-dark mx-3" data-toggle="modal" data-target="#informationModal">Edit information</button>
+                            <button class="btn btn-outline-primary mx-3" data-toggle="modal" data-target="#informationModal">Edit information</button>
                         </div>
                     </div>
                 </div>
@@ -344,8 +344,8 @@ if (!isset($_SESSION['admin'])) {
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success" onclick="changeProfile()">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="changeProfile()">Save changes</button>
                 </div>
             </div>
         </div>
@@ -364,20 +364,20 @@ if (!isset($_SESSION['admin'])) {
                 <div class="modal-body">
                     <form>
                         <div class="form-group row align-items-center">
-                            <label for="password-change" class="col-3 col-form-label"><strong>Current password</strong></label>
-                            <div class="col-9">
+                            <label for="password-change" class="col-2 col-form-label"><strong>Current password</strong></label>
+                            <div class="col-10">
                                 <input class="form-control" type="password" value="" id="password-change">
                             </div>
                         </div>
                         <div class="form-group row align-items-center">
-                            <label for="new-password-change" class="col-3 col-form-label"><strong>New password</strong></label>
-                            <div class="col-9">
+                            <label for="new-password-change" class="col-2 col-form-label"><strong>New password</strong></label>
+                            <div class="col-10">
                                 <input class="form-control" type="password" value="" id="new-password-change">
                             </div>
                         </div>
                         <div class="form-group row align-items-center justify-content-center">
-                            <label for="confirm-password-change" class="col-3 col-form-label"><strong>Confirm password</strong></label>
-                            <div class="col-9">
+                            <label for="confirm-password-change" class="col-2 col-form-label"><strong>Confirm password</strong></label>
+                            <div class="col-10">
                                 <input class="form-control" type="password" value="" id="confirm-password-change" onkeyup="validateConfirm()">
                             </div>
                             <span class="text-danger" id="confirmErr"></span>
@@ -385,8 +385,8 @@ if (!isset($_SESSION['admin'])) {
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success" onclick="changePassword()">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="changePassword()">Save changes</button>
                 </div>
             </div>
         </div>
@@ -434,8 +434,8 @@ if (!isset($_SESSION['admin'])) {
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success" onclick="changeInfo()">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="changeInfo()">Save changes</button>
                 </div>
             </div>
         </div>
@@ -443,12 +443,13 @@ if (!isset($_SESSION['admin'])) {
     <!-- end main content -->
     <!-- import script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="js/home.js"></script>
     <!-- end import script -->
 </body>
 
 <!-- import script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-<script src="../../assets/js/admin.js"></script>
+<script src="/assets/js/admin.js"></script>
 <!-- end import script -->
 
 

@@ -191,46 +191,7 @@ function changeInfo($mysqli, $address, $phone, $email, $detail)
         return "SQL prepared incorrectly!";
     }
 }
-/////////////////////////////////////USER//////////////////////////////////////////////
-
-//Add user
-if ($action == "add_user") {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $full_name = $_POST['full_name'];
-    $url = $_POST['url'];
-    $phone = $_POST['telephone'];
-    $birthday = $_POST['birthday'];
-
-    echo addUser($mysqli, $username, $email, $full_name, $url, $phone, $birthday);
-}
-
-function addUser($mysqli, $username, $email, $full_name, $url, $phone, $birthday)
-{
-    $password = $param_username = $param_email = $param_fullname = $param_url = $param_telephone = $param_birthday = NULL;
-    $sql = "INSERT INTO users (username, password, email, full_name, url, telephone) VALUES (?,?,?,?,?,?)";
-    $mysqli->prepare($sql);
-    if ($stmt = $mysqli->prepare($sql)) {
-
-        $stmt->bind_param('ssssss', $param_username, $password, $param_email, $param_fullname, $param_url, $param_telephone);
-        $param_username = $username;
-        $password = '123456';
-        $param_email = $email;
-        $param_fullname = $full_name;
-        $param_url = $url;
-        $param_telephone = $phone;
-        $param_birthday = $birthday;
-
-
-        if ($stmt->execute()) {
-            return "Add new user successfully!";
-        } else {
-            return "SQL executed incorrectly!";
-        }
-    } else {
-        return "SQL prepared incorrectly!";
-    }
-}
+/////////////////////////////////////
 
 // Edit user
 if ($action == "edit_user") {
@@ -275,73 +236,8 @@ function editUser($mysqli, $id, $username, $email, $full_name, $url, $telephone,
         return "SQL prepared incorrectly!";
     }
 }
+///////////////////////////////
 
-// Delete user
-if ($action == "delete_user") {
-    $id = $_POST['id'];
-    echo deleteUser($mysqli, $id);
-}
-
-function deleteUser($mysqli, $id)
-{
-    $param_id = NULL;
-    $sql = "DELETE FROM users WHERE id=?";
-
-    if ($stmt = $mysqli->prepare($sql)) {
-        $stmt->bind_param('i', $param_id);
-
-        $param_id = $id;
-
-        if ($stmt->execute()) {
-            return "Delete user successfully!";
-        } else {
-            return "SQL executed incorrectly!";
-        }
-    } else {
-        return "SQL prepared incorrectly!";
-    }
-}
-
-///////////////////////////////////STAFF////////////////////////////////////////////
-// Add staff
-if ($action == "add_staff") {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $profile = $_POST['profile'];
-    $phone = $_POST['phone'];
-    $detail = $_POST['detail'];
-    echo addStaff($mysqli, $name, $email, $profile, $phone, $detail);
-}
-
-function addStaff($mysqli, $name, $email, $profile, $phone, $detail)
-{
-    $param_name = $param_email = $param_profile = $param_phone = $param_detail = NULL;
-
-    $stmt = $mysqli->prepare("INSERT INTO staff (name, profile, email, phone, detail) VALUES (?, ?, ?, ?, ?)");
-    if ($stmt) {
-        $stmt->bind_param(
-            'sssss',
-            $param_name,
-            $param_profile,
-            $param_email,
-            $param_phone,
-            $param_detail,
-        );
-
-        $param_name = $name;
-        $param_profile = $profile;
-        $param_email = $email;
-        $param_phone = $phone;
-        $param_detail = $detail;
-        if ($stmt->execute()) {
-            return "Add staff successfully!";
-        } else {
-            return "SQL executed incorrectly!";
-        }
-    } else {
-        return "SQL prepared incorrectly!";
-    }
-}
 // Edit staff
 if ($action == "edit_staff") {
     $name = $_POST['name'];
@@ -400,6 +296,35 @@ function editStaff($mysqli, $id, $name, $profile, $email, $phone, $html, $css, $
         return "SQL prepared incorrectly!";
     }
 }
+///////////////////////////////
+
+// Delete user
+if ($action == "delete_user") {
+    $id = $_POST['id'];
+    echo deleteUser($mysqli, $id);
+}
+
+function deleteUser($mysqli, $id)
+{
+    $param_id = NULL;
+    $sql = "DELETE FROM users WHERE id=?";
+
+    if ($stmt = $mysqli->prepare($sql)) {
+        $stmt->bind_param('i', $param_id);
+
+        $param_id = $id;
+
+        if ($stmt->execute()) {
+            return "Delete user successfully!";
+        } else {
+            return "SQL executed incorrectly!";
+        }
+    } else {
+        return "SQL prepared incorrectly!";
+    }
+}
+
+///////////////////
 
 //Delete staff
 if ($action == "delete_staff") {
@@ -417,7 +342,6 @@ function deleteStaff($mysqli, $id)
         $param_id = $id;
 
         if ($stmt->execute()) {
-            $mysqli->query("ALTER TABLE staff AUTO_INCREMENT=1");
             return "Delete staff successfully!";
         } else {
             return "SQL executed incorrectly!";
@@ -426,49 +350,11 @@ function deleteStaff($mysqli, $id)
         return "SQL prepared incorrectly!";
     }
 }
-///////////////////////////////PRODUCT////////////////////////////////////////
-// Add product
-if ($action == "add_product") {
-    $name = $_POST['name'];
-    $author = $_POST['author'];
-    $type = $_POST['type'];
-    $url = $_POST['url'];
-    $price = $_POST['price'];
+///////////////////////////////
 
-
-    echo addProduct($mysqli, $name, $author, $type, $url, $price);
-}
-
-function addProduct($mysqli, $name, $author, $type, $url, $price)
-{
-    $param_name = $param_author = $param_url = $param_type = $param_price = NULL;
-    $sql = "INSERT INTO product(name, author, type, url, price) VALUES (?, ?, ?, ?, ?)";
-
-    if ($stmt = $mysqli->prepare($sql)) {
-        $stmt->bind_param(
-            'ssssi',
-            $param_name,
-            $param_author,
-            $param_type,
-            $param_url,
-            $param_price
-        );
-        $param_name = $name;
-        $param_author = $author;
-        $param_url = $url;
-        $param_type  = $type;
-        $param_price = $price;
-        if ($stmt->execute()) {
-            return "Add product successfully!";
-        } else {
-            return "SQL executed incorrectly!";
-        }
-    } else {
-        return "SQL prepared incorrectly!";
-    }
-}
 // Edit product
 if ($action == "edit_product") {
+    $old_id = $_POST['old_id'];
     $new_id = $_POST['new_id'];
     $name = $_POST['name'];
     $author = $_POST['author'];
@@ -476,22 +362,53 @@ if ($action == "edit_product") {
     $url = $_POST['url'];
     $price = $_POST['price'];
 
-    echo changeProduct($mysqli, $new_id, $name, $author, $type, $url, $price);
+    //Check if new id exist
+    if (!checkProduct($mysqli, $old_id, $new_id)) {
+        echo "New ID existed, please choose another one!";
+    } else {
+        changeCommentWithProductId($mysqli, $old_id, $new_id);
+        echo changeProduct($mysqli, $old_id, $new_id, $name, $author, $type, $url, $price);
+    }
 }
-
-function changeProduct($mysqli, $new_id, $name, $author, $type, $url, $price)
+function checkProduct($mysqli, $old_id, $new_id)
 {
-    $param_name = $param_author = $param_type  = $param_url = $param_price = $id = NULL;
-    $sql = "UPDATE product SET name=?,author=?, type=?, url=?, price=? WHERE id = ?";
+    $param_id = NULL;
+    if ($old_id == $new_id) return false;
+    $sql = "SELECT id FROM product WHERE id = ?";
+    $stmt = $mysqli->prepare($sql);
+    $stmt->bind_param('i', $param_id);
+    $param_id = $new_id;
+    $stmt->execute();
+    $stmt->store_result();
+    if ($stmt->num_rows == 1) {
+        return false;
+    }
+    return true;
+}
+function changeCommentWithProductId($mysqli, $old_id, $new_id)
+{
+    $param_new_id = $param_old_id = NULL;
+    $sql = "UPDATE comment SET product_id = ? WHERE product_id = ?";
+    $stmt = $mysqli->prepare($sql);
+    $stmt->bind_param('ii', $param_new_id, $param_old_id);
+    $param_new_id = $new_id;
+    $param_old_id = $old_id;
+    $stmt->execute();
+}
+function changeProduct($mysqli, $old_id, $new_id, $name, $author, $type, $url, $price)
+{
+    $param_id = $param_name = $param_author = $param_type  = $param_url = $param_price = $id = NULL;
+    $sql = "UPDATE product SET id=?, name=?,author=?, type=?, url=?, price=? WHERE id = ?";
     if ($stmt = $mysqli->prepare($sql)) {
-        $stmt->bind_param('ssssii', $param_name, $param_author, $param_type, $param_url, $param_price, $id);
+        $stmt->bind_param('issssii', $param_id, $param_name, $param_author, $param_type, $param_url, $param_price, $id);
 
+        $param_id = $new_id;
         $param_name = $name;
         $param_author = $author;
         $param_type  = $type;
         $param_url = $url;
         $param_price = $price;
-        $id = $new_id;
+        $id = $old_id;
         if ($stmt->execute()) {
             return "Change product information successfully!";
         } else {
@@ -501,6 +418,9 @@ function changeProduct($mysqli, $new_id, $name, $author, $type, $url, $price)
         return "SQL prepared incorrectly!";
     }
 }
+
+//////////////////////////////////
+
 
 //Delete products
 if ($action == "delete_product") {
@@ -518,7 +438,6 @@ function deleteProduct($mysqli, $id)
         $param_id = $id;
 
         if ($stmt->execute()) {
-            $mysqli->query("ALTER TABLE product AUTO_INCREMENT=1");
             return "Delete product successfully!\n" . deleteCommentWithProductId($mysqli, $id);;
         } else {
             return "SQL executed incorrectly!";
@@ -546,6 +465,69 @@ function deleteCommentWithProductId($mysqli, $product_id)
         return "SQL prepared incorrectly!";
     }
 }
+/////////////////////////////////////
+
+// Add product
+if ($action == "add_product") {
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $author = $_POST['author'];
+    $type = $_POST['type'];
+    $url = $_POST['url'];
+    $price = $_POST['price'];
+
+    if (checkProductId($mysqli, $id)) {
+        echo "New ID existed, please choose another one!";
+    } else {
+        echo addProduct($mysqli, $id, $name, $author, $type, $url, $price);
+    }
+}
+function checkProductId($mysqli, $id)
+{
+    $param_id = NULL;
+    $sql = "SELECT id FROM product WHERE id = ?";
+    $stmt = $mysqli->prepare($sql);
+    $stmt->bind_param('i', $param_id);
+    $param_id = $id;
+    $stmt->execute();
+    $stmt->store_result();
+    if ($stmt->num_rows >= 1) {
+        return true;
+    }
+    return false;
+}
+function addProduct($mysqli, $id, $name, $author, $type, $url, $price)
+{
+    $param_id = $param_name = $param_author = $param_url = $param_type = $param_price = NULL;
+    $sql = "INSERT INTO product(id, name, author, type, url, price) VALUES (?, ?, ?, ?, ?, ?)";
+
+    if ($stmt = $mysqli->prepare($sql)) {
+        $stmt->bind_param(
+            'issssi',
+            $param_id,
+            $param_name,
+            $param_author,
+            $param_type,
+            $param_url,
+            $param_price
+        );
+
+        $param_id = $id;
+        $param_name = $name;
+        $param_author = $author;
+        $param_url = $url;
+        $param_type  = $type;
+        $param_price = $price;
+        if ($stmt->execute()) {
+            return "Add product successfully!";
+        } else {
+            return "SQL executed incorrectly!";
+        }
+    } else {
+        return "SQL prepared incorrectly!";
+    }
+}
+/////////////////////////////////////////
 
 //Delete comment
 if ($action == "delete_comment") {
@@ -561,10 +543,44 @@ function deleteComment($mysqli, $id)
     $stmt->bind_param('i', $param_id);
     $param_id = $id;
     if ($stmt->execute()) {
-        $mysqli->query("ALTER TABLE comment AUTO_INCREMENT=1");
         return "Delete comment successfully!";
     } else {
         return "SQL executed incorrectly!!!";
     }
 }
 ///////////////////////////////
+
+
+//Add user
+if ($action == "add_user"){
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $full_name = $_POST['full_name'];
+    $url = $_POST['url'];
+    $phone = $_POST['telephone'];
+    $birthday = $_POST['birthday'];
+
+    echo addUser($mysqli, $username, $email, $full_name, $url, $phone, $birthday);
+}
+
+function addUser($mysqli, $username, $email, $full_name, $url, $phone, $birthday){
+    $param_username= $param_email=$param_fullname= $param_url= $param_telephone= $param_birthday = NULL;
+    $sql = "INSERT INTO users (username, email, full_name,url,telephone,date_of_birth) VALUES (?,?,?,?,?,?)";
+
+    $stmt = $mysqli->prepare($sql);
+    $stmt->bind_param('ssssss', $param_username, $param_email, $param_fullname, $param_url, $param_telephone, $param_birthday);
+
+    $param_username = $username;
+    $param_email = $email;
+    $param_fullname = $full_name;
+    $param_url = $url;
+    $param_telephone = $phone;
+    $param_birthday = $birthday;
+
+    if ($stmt->execute()){
+        return "Add new user successfully!";
+    }
+    else{
+        "SQL executed incorrectly!";
+    }
+}
