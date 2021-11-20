@@ -185,7 +185,7 @@ function editProduct(product_id_value) {
 
     $.post(
         "action.php",
-        { action: "edit_product", old_id: product_id_value, new_id: idValue, name: nameValue, author: authorValue, type: typeValue, url: urlValue, price: priceValue },
+        { action: "edit_product", new_id: idValue, name: nameValue, author: authorValue, type: typeValue, url: urlValue, price: priceValue },
         function (data, status) {
             alert(data);
             if (data == "Change product information successfully!")
@@ -282,44 +282,29 @@ function deleteStaff(staff_id) {
     }
 }
 function addProduct() {
+    var nameValue = document.getElementById("name").value;
+    var authorValue = document.getElementById("author").value;
+    var typeValue = document.getElementById("type").value;
+    var urlValue = document.getElementById("url").value;
+    var priceValue = document.getElementById("price").value;
 
-    if (validate("id") && validate("name") && validate('author') && validate('type') && validate('url') && validate('price')) {
-        var idValue = document.getElementById("id").value;
-        var nameValue = document.getElementById("name").value;
-        var authorValue = document.getElementById("author").value;
-        var typeValue = document.getElementById("type").value;
-        var urlValue = document.getElementById("url").value;
-        var priceValue = document.getElementById("price").value;
+    $.post(
+        "action.php",
+        {
+            action: "add_product",
+            name: nameValue,
+            author: authorValue,
+            type: typeValue,
+            url: urlValue,
+            price: priceValue
+        },
+        function (data, status) {
+            alert(data);
+            if (data == "Add product successfully!")
+                window.location.href = "product.php";
+        }
+    )
 
-        $.post(
-            "action.php",
-            {
-                action: "add_product",
-                id: idValue,
-                name: nameValue,
-                author: authorValue,
-                type: typeValue,
-                url: urlValue,
-                price: priceValue
-            },
-            function (data, status) {
-                alert(data);
-                if (data == "Add product successfully!")
-                    window.location.href = "product.php";
-            }
-        )
-    }
-}
-
-function validate(name) {
-    if (!document.getElementById(name).checkValidity()) {
-        document.getElementById(name + "Err").innerHTML = document.getElementById("name").validationMessage;
-        return false;
-    }
-    else {
-        document.getElementById(name + "Err").innerHTML = document.getElementById("name").validationMessage;
-        return true;
-    }
 }
 
 function deleteComment(comment_id) {
@@ -347,16 +332,42 @@ function addUser() {
         {
             action: "add_user",
             username: username,
-            email:email,
-            full_name:full_name,
-            url:url,
-            telephone:telephone,
-            birthday:birthday
+            email: email,
+            full_name: full_name,
+            url: url,
+            telephone: telephone,
+            birthday: birthday
         },
-        function(data, status){
+        function (data, status) {
+            console.log(data)
             alert(data);
-            if(data == "Add new user successfully!")
+            if (data == "Add new user successfully!")
                 window.location.href = "user.php";
+        }
+    )
+}
+function addStaff() {
+    var name = document.getElementById('name').value;
+    var profile = document.getElementById('profile').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('profile').value;
+    var detail = document.getElementById('detail').value;
+
+    $.post(
+        "action.php",
+        {
+            action: "add_staff",
+            name: name,
+            email: email,
+            profile: profile,
+            phone: phone,
+            detail: detail
+
+        },
+        function (data, status) {
+            alert(data);
+            if (data == "Add staff successfully!")
+                window.location.href = "staff.php";
         }
     )
 }
