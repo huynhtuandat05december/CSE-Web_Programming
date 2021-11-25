@@ -112,7 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Login</title>
 </head>
 
-<body data-new-gr-c-s-check-loaded="8.867.0" style="background-image: url('/assets/img/login-bg.jpg'); background-size: cover;">
+<body data-new-gr-c-s-check-loaded="8.867.0" style="background-image: url('/assets/img/login-bg.png'); background-size: cover;">
     <!--Header / Navbar-->
     <nav id="mainNav" class="navbar navbar-expand-md fixed-top animate__animated animate__slideInDown">
         <div class="container d-flex justify-content-between align-items-center flex-wrap">
@@ -125,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
                 ?>
             </div>
-            <a href="index.php" class="navbar-brand font-weight-bold" id="projectName">Bookstore</a>
+            <a href="index.php" class="navbar-brand font-weight-bold" id="projectName">Apple Store</a>
             <button type="button" class="btn" data-toggle="collapse" data-target="#navbarDefault"><i class="material-icons" id="nav-icon">menu</i></button>
             <div class="line-break"></div>
             <div id="navbarDefault" class="navbar-collapse collapse justify-content-center align-items-center">
@@ -158,7 +158,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                     <!-- fix -->
                     <h1 class="font-weight-bold">Log In</h1>
-                    <img src="/assets/img/hcmut.png">
+                    <img src="/assets/img/apple.png">
                     <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                         <!-- fix -->
                         <input type="text" name="username" class="form-control animate__animated" id="username" placeholder="Username" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required value="<?php echo $username; ?>"> <!-- fix -->
@@ -171,9 +171,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <span class="text-danger"><?php echo $password_err; ?></span> <!-- fix -->
                     <a href="#" class="my-2">Forgot your password?</a>
                     <button class="btn btn-outline-primary btn-rounded px-5">Log In</button>
+                    <p style="font-style: italic;">Don't have any account? Sign up here</p>
+                    <button class="btn btn-primary btn-rounded px-5 ghost" onclick="directSignup()">Sign Up</button>
                 </form>
             </div>
-            <div class="overlay-container">
+            <!-- <div class="overlay-container">
                 <div class="overlay">
                     <div class="overlay-panel overlay-right">
                         <h1 class="text-white">Welcome back!</h1>
@@ -183,7 +185,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <button class="btn btn-primary btn-rounded px-5 ghost" onclick="directSignup()">Sign Up</button>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 

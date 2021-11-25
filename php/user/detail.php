@@ -61,7 +61,7 @@ if ($stmt = $mysqli->prepare($sql)) {
                 }
                 ?>
             </div>
-            <a href="index.php" class="navbar-brand font-weight-bold" id="projectName">Bookstore</a>
+            <a href="index.php" class="navbar-brand font-weight-bold" id="projectName">Apple Store</a>
             <button type="button" class="btn" data-toggle="collapse" data-target="#navbarDefault"><i class="material-icons" id="nav-icon">menu</i></button>
             <div id="navbarDefault" class="navbar-collapse collapse justify-content-center align-items-center">
                 <ul class="nav navbar-nav text-uppercase font-weight-bold">
@@ -105,7 +105,7 @@ if ($stmt = $mysqli->prepare($sql)) {
                 <div class="portfolio-details-container">
 
                     <div class="portfolio-details-carousel">
-                        <img src="<?php echo $url; ?>" style="width:100%;" alt="">
+                        <img src="<?php echo $url; ?>" style="width:50%;" alt="">
                         <!--<img src="assets/img/souvenirs/hat-1.jpg" style="width:100%;" alt="">-->
                     </div>
 
@@ -114,7 +114,7 @@ if ($stmt = $mysqli->prepare($sql)) {
                         <ul>
                             <li><strong>Category</strong>: <?php echo $type; ?></li>
                             <li><strong>Author</strong>: <?php echo $author; ?></li>
-                            <li><strong>Price</strong>: <?php echo $price; ?></li>
+                            <li><strong>Price</strong>: <?php echo "$price $" ?></li>
                         </ul>
                     </div>
 
