@@ -40,7 +40,7 @@
                 }
                 ?>
             </div>
-            <a href="index.php" class="navbar-brand font-weight-bold" id="projectName">Bookstore</a>
+            <a href="index.php" class="navbar-brand font-weight-bold" id="projectName">Apple Store</a>
             <button type="button" class="btn" data-toggle="collapse" data-target="#navbarDefault"><i class="material-icons" id="nav-icon">menu</i></button>
             <div id="navbarDefault" class="navbar-collapse collapse justify-content-center align-items-center">
                 <ul class="nav navbar-nav text-uppercase font-weight-bold">
@@ -67,16 +67,12 @@
     <div id="home" class="intro justify-content-center align-items-center d-flex">
         <div class="intro-overlay"></div>
         <div class="container intro-content">
-            <h1 class="font-weight-bold text-white intro-title mb-4 animate__animated animate__backInDown">Bookstore
+            <h1 class="font-weight-bold text-white intro-title mb-4 animate__animated animate__backInDown">Apple Store
                 HCMUT</h1>
-            <p class="typewrite intro-subtitle" data-period="2000" data-type="[ &quot;Huỳnh Công Hải&quot;, &quot;Trương Minh Hiệp&quot;, &quot;Hoàng Vũ Tĩnh&quot;, &quot;Hồ Ngọc Trí&quot; ]">
-                <span class="wrap">Huỳnh Công Hải</span>
-            </p>
-
             <span class="wrap"></span>
             <?php
             if (isset($_SESSION['username'])) {
-                echo '<h2 class="text-white">Hi, <b>' . htmlspecialchars($_SESSION["username"]) . '!</b>. Welcome to our site.</h2></div>';
+                echo '<h2 class="text-white">Hi, <b style="color: #7200CF">' . htmlspecialchars($_SESSION["username"]) . '</b>! Welcome to our site.</h2></div>';
             }
             ?>
         </div>

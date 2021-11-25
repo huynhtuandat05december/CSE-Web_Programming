@@ -23,6 +23,7 @@ CREATE TABLE users (
     date_of_birth DATE,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+    
 -- International book
 insert INTO product(name, author, type, url, price)
 values(
