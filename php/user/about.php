@@ -81,10 +81,6 @@
                     $profile,
                     $email,
                     $phone,
-                    $html,
-                    $css,
-                    $php,
-                    $javascript,
                     $detail,
                     $url
                 );
