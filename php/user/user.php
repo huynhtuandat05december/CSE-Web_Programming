@@ -68,7 +68,7 @@ if (!isset($_SESSION['username'])) {
         </div>
     </nav>
     <!--Conntact Section-->
-    <div class="section d-flex justify-content-center" id="contact-section" style="background-image: url(/assets/img/overlay-bg.jpg)">
+    <div id="home" class="section d-flex justify-content-center">
         <section class="contact">
             <div class="overlay-mf"></div>
             <div class="container">

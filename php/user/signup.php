@@ -165,7 +165,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="intro-overlay"></div>
     <div class="main d-flex justify-content-center align-items-center flex-column flex-wrap">
         <div class="login-container right-panel-active" id="container">
-            <div class="form-container sign-up-container">
+            <div class="form-container">
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                     <!-- fix -->
                     <h1 class="font-weight-bold">Create Account</h1>
@@ -190,17 +190,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <span class="text-danger mb-3" id="confirmErr"><?php echo $confirm_password_err; ?></span> <!-- fix -->
 
                     <button class="btn btn-outline-primary btn-rounded px-5">Sign Up</button>
+                    <p style="font-style:italic;">Already have an account? Log in now!</p>
+                    <button class="btn btn-primary btn-rounded px-5 ghost" onclick="directLogin()">Log in</button>
                 </form>
-            </div>
-            <div class="overlay-container">
-                <div class="overlay">
-                    <div class="overlay-panel overlay-left">
-                        <h1 class="text-white">Hello, Friend!</h1>
-                        <p>Enter your personal details and start journey with us</p>
-                        <p style="font-style:italic;">Already have an account? Log in now!</p>
-                        <button class="btn btn-primary btn-rounded px-5 ghost" onclick="directLogin()">Log in</button>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

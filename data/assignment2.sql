@@ -23,396 +23,153 @@ CREATE TABLE users (
     date_of_birth DATE,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
-    
--- International book
-insert INTO product(name, author, type, url, price)
-values(
-        "A Madness of Sunshine",
-        "Nalini singh",
-        "International",
-        "/assets/img/internationalbook/work-1.jpg",
-        "15"
-    );
-insert INTO product(name, author, type, url, price)
-values(
-        "Novice Dragoneer",
-        "Django Weller",
-        "International",
-        "/assets/img/internationalbook/work-2.jpg",
-        "15"
-    );
-insert INTO product(name, author, type, url, price)
-values(
-        "Me before you",
-        "Jojo Moyes",
-        "International",
-        "/assets/img/internationalbook/work-3.jpg",
-        "15"
-    );
-insert INTO product(name, author, type, url, price)
-values(
-        "Forget You Know Me",
-        "Jessica Strawser",
-        "International",
-        "/assets/img/internationalbook/work-4.jpg",
-        "15"
-    );
-insert INTO product(name, author, type, url, price)
-values(
-        "The best of me",
-        "Nicholas sparks",
-        "International",
-        "/assets/img/internationalbook/work-5.jpg",
-        "15"
-    );
-insert INTO product(name, author, type, url, price)
-values(
-        "The wolf and the Watchman",
-        "Niklas Natt obc Dag",
-        "International",
-        "/assets/img/internationalbook/work-6.jpg",
-        "15"
-    );
-insert INTO product(name, author, type, url, price)
-values(
-        "The Good Guy",
-        "Mark Mcallister",
-        "International",
-        "/assets/img/internationalbook/work-7.jpg",
-        "15"
-    );
-insert INTO product(name, author, type, url, price)
-values(
-        "At the Going Down of the Sun",
-        "Marius Oelschig",
-        "International",
-        "/assets/img/internationalbook/work-8.jpg",
-        "15"
-    );
-insert INTO product(name, author, type, url, price)
-values(
-        "The Imperfections of Memory",
-        "Angelina Aludo",
-        "International",
-        "/assets/img/internationalbook/work-9.jpg",
-        "15"
-    );
-insert INTO product(name, author, type, url, price)
-values(
-        "The King of Drugs",
-        "Nora Barrett",
-        "International",
-        "/assets/img/internationalbook/work-10.jpg",
-        "15"
-    );
-insert INTO product(name, author, type, url, price)
-values(
-        "Leviathan Loch",
-        "Mark Miller",
-        "International",
-        "/assets/img/internationalbook/work-11.jpg",
-        "15"
-    );
-insert INTO product(name, author, type, url, price)
-values(
-        "Histories Cans",
-        "Fleurs",
-        "International",
-        "/assets/img/internationalbook/work-12.jpg",
-        "15"
-    );
-insert INTO product(name, author, type, url, price)
-values(
-        "The cerulean",
-        "Amy Ewing",
-        "International",
-        "/assets/img/internationalbook/work-13.jpg",
-        "15"
-    );
-insert INTO product(name, author, type, url, price)
-values(
-        "The book of Chaos",
-        "Jessica Renwick",
-        "International",
-        "/assets/img/internationalbook/work-14.jpg",
-        "15"
-    );
-insert INTO product(name, author, type, url, price)
-values(
-        "A Daydreamer's Utopia",
-        "Louise Hunts",
-        "International",
-        "/assets/img/internationalbook/work-15.jpg",
-        "15"
-    );
-insert INTO product(name, author, type, url, price)
-values(
-        "The priory of the Orange tree",
-        "Samantha Shannon",
-        "International",
-        "/assets/img/internationalbook/work-16.jpg",
-        "15"
-    );
-insert INTO product(name, author, type, url, price)
-values(
-        "A game of Thrones",
-        "George R.R Martin",
-        "International",
-        "/assets/img/internationalbook/work-17.jpg",
-        "15"
-    );
-insert INTO product(name, author, type, url, price)
-values(
-        "The edge of The Unknown",
-        "Andrew Hamburg",
-        "International",
-        "/assets/img/internationalbook/work-18.jpg",
-        "15"
-    );
-insert INTO product(name, author, type, url, price)
-values(
-        "Dark Space",
-        "author name",
-        "International",
-        "/assets/img/internationalbook/work-19.jpg",
-        "15"
-    );
-insert INTO product(name, author, type, url, price)
-values(
-        "Harry Potter and the Philosopher's Stone",
-        "J.L.Rowling",
-        "International",
-        "/assets/img/internationalbook/work-20.jpg",
-        "15"
-    );
-insert INTO product(name, author, type, url, price)
-values(
-        "Tess of the Road",
-        "Rachel Hartman",
-        "International",
-        "/assets/img/internationalbook/work-21.jpg",
-        "15"
-    );
--- Domestic book
+
 insert INTO product(name, author, type, url, price)
 values (
-        "Yêu trên từng ngón tay",
-        "Trần Trà My",
-        "Domestic book",
-        "/assets/img/domesticbook/book1.jpg",
-        "15"
+        "Apple Watch 7 Thép",
+        "Apple",
+        "Watch",
+        "/assets/img/watchs/watch-1.jpg",
+        "899"
     ),
     (
-        "Ai từng là con nít",
-        "Nhiều tác giả",
-        "Domestic book",
-        "/assets/img/domesticbook/book2.jpg",
-        "15"
+        "Apple Watch 7 Nhôm",
+        "Apple",
+        "Watch",
+        "/assets/img/watchs/watch-2.jpg",
+        "899"
     ),
     (
-        "Ái tình nơi đầu lưỡi",
-        "Jo Kyung Ran",
-        "Domestic book",
-        "/assets/img/domesticbook/book3.jpg",
-        "15"
+        "Apple Watch 5 Nike",
+        "Apple",
+        "Watch",
+        "/assets/img/watchs/watch-3.png",
+        "499"
     ),
     (
-        "Xu Xu đừng khóc",
-        "Hồng Sakura",
-        "Domestic book",
-        "/assets/img/domesticbook/book4.jpg",
-        "15"
+        "AirPods (gen 3)",
+        "Apple",
+        "Airpod",
+        "/assets/img/airpods/airpod-1.png",
+        "259"
     ),
     (
-        "Dịch COVID-19",
-        "Giáo sư Trương Văn Hồng",
-        "Domestic book",
-        "/assets/img/domesticbook/book5.jpg",
-        "15"
+        "AirPods Max",
+        "Apple",
+        "Airpod",
+        "/assets/img/airpods/airpod-2.webp",
+        "359"
     ),
     (
-        "Say sắc",
-        "Lưu Tiểu Xuyên",
-        "Domestic book",
-        "/assets/img/domesticbook/book6.jpg",
-        "15"
+        "AirPods 2",
+        "Apple",
+        "Airpod",
+        "/assets/img/airpods/airpod-3.png",
+        "159"
     ),
     (
-        "Bộ luật dân sự",
-        "Nhà xuất bản lao động",
-        "Domestic book",
-        "/assets/img/domesticbook/book7.jpg",
-        "15"
+        "AirPods Pro",
+        "Apple",
+        "Airpod",
+        "/assets/img/airpods/airpod-4.jpeg",
+        "299"
     ),
     (
-        "Đại cương về nhà nước và pháp luật",
-        "GS Đào Trí Úc- GS. Hoàng Thị Kim Quế",
-        "Domestic book",
-        "/assets/img/domesticbook/book8.jpg",
-        "15"
+        "Apple AirTag",
+        "Apple",
+        "Airtag",
+        "/assets/img/airtags/airtag-1.png",
+        "29"
     ),
     (
-        "Khoa học 5",
-        "Bộ giáo dục và đào tạo",
-        "Domestic book",
-        "/assets/img/domesticbook/book9.jpg",
-        "15"
+        "AirTag Leather Key Ring",
+        "Apple",
+        "Airtag",
+        "/assets/img/airtags/airtag-2.jpeg",
+        "49"
+    ),
+    (
+        "Apple Polishing Cloth",
+        "Apple",
+        "Airtag",
+        "/assets/img/apple-polishing-cloth.jpg",
+        "39"
     );
--- electronic
+
 insert INTO product(name, author, type, url, price)
-values (
-        "Watch 1",
-        "Apple",
-        "Electronics",
-        "/assets/img/electronics/watch-1.jpg",
-        "15"
-    ),
-    (
-        "Watch 2",
-        "Apple",
-        "Electronics",
-        "/assets/img/electronics/watch-2.jpg",
-        "15"
-    ),
-    (
-        "Watch 3",
-        "Apple",
-        "Electronics",
-        "/assets/img/electronics/watch-3.jpg",
-        "15"
-    ),
-    (
-        "Camera 1",
-        "Apple",
-        "Electronics",
-        "/assets/img/electronics/camera-1.jpg",
-        "15"
-    ),
-    (
-        "Camera 2",
-        "Apple",
-        "Electronics",
-        "/assets/img/electronics/camera-2.jpg",
-        "15"
-    ),
-    (
-        "Camera 3",
-        "Apple",
-        "Electronics",
-        "/assets/img/electronics/camera-3.jpg",
-        "15"
-    );
--- souvenirs
-insert INTO product(name, author, type, url, price)
-values (
-        "Hat 1",
-        "Channel",
-        "Souvenirs",
-        "/assets/img/souvenirs/hat.jpg",
-        "15"
-    ),
-    (
-        "Hat 1",
-        "Channel",
-        "Souvenirs",
-        "/assets/img/souvenirs/hat-1.jpg",
-        "15"
-    ),
-    (
-        "Packet",
-        "Channel",
-        "Souvenirs",
-        "/assets/img/souvenirs/model.jpg",
-        "15"
-    ),
-    (
-        "Model",
-        "Channel",
-        "Souvenirs",
-        "/assets/img/souvenirs/packet.jpg",
-        "15"
-    ),
-    (
-        "Pillow",
-        "Channel",
-        "Souvenirs",
-        "/assets/img/souvenirs/pillow.jpg",
-        "15"
-    ),
-    (
-        "Shirt",
-        "Channel",
-        "Souvenirs",
-        "/assets/img/souvenirs/shirt.jpg",
-        "15"
-    );
--- stationary
-insert INTO product(name, author, type, url, price)
-values (
-        "eraser",
-        "Thien Long",
-        "Stationary",
-        "/assets/img/stationary/eraser.jpg",
-        "15"
-    ),
-    (
-        "pen",
-        "Thien Long",
-        "Stationary",
-        "/assets/img/stationary/pen.jpg",
-        "15"
-    ),
-    (
-        "ruler",
-        "Thien Long",
-        "Stationary",
-        "/assets/img/stationary/ruler.jpg",
-        "15"
-    );
--- toys
-insert INTO product(name, author, type, url, price)
-values (
-        "Teddy bear",
-        "Channel",
-        "Toys",
-        "/assets/img/toys/toy-1.jpg",
-        "15"
-    ),
-    (
-        "Teddy bear",
-        "Channel",
-        "Toys",
-        "/assets/img/toys/toy-2.jpg",
-        "15"
-    ),
-    (
-        "Hiep",
-        "Channel",
-        "Toys",
-        "/assets/img/toys/toy-3.jpg",
-        "15"
-    ),
-    (
-        "Hai",
-        "Channel",
-        "Toys",
-        "/assets/img/toys/toy-4.jpg",
-        "15"
-    ),
-    (
-        "Tri",
-        "Channel",
-        "Toys",
-        "/assets/img/toys/toy-5.jpg",
-        "15"
-    ),
-    (
-        "Car model",
-        "Channel",
-        "Toys",
-        "/assets/img/toys/toy-6.jpg",
-        "15"
-    );
+values 
+(
+    "iPhone 13 Pro Max",
+    "Apple",
+    "iPhone",
+    "/assets/img/iphone/iphone-1.jpg",
+    "1000"
+),
+(
+    "iPhone 12 Pro Max",
+    "Apple",
+    "iPhone",
+    "/assets/img/iphone/iphone-2.jpg",
+    "900"
+),
+(
+    "iPhone 11 Pro Max",
+    "Apple",
+    "iPhone",
+    "/assets/img/iphone/iphone-3.jpg",
+    "800"
+),
+(
+    "iPhone XS Max",
+    "Apple",
+    "iPhone",
+    "/assets/img/iphone/iphone-4.jpg",
+    "700"
+),
+(
+    "iPhone 8 Plus",
+    "Apple",
+    "iPhone",
+    "/assets/img/iphone/iphone-5.jpg",
+    "600"
+),
+(
+    "Apple Magic Keyboard 2",
+    "Apple",
+    "Keyboard",
+    "/assets/img/keyboard/keyboard-1.jpg",
+    "600"
+),
+(
+    "Apple Magic Keyboard 2 with Numpad",
+    "Apple",
+    "Keyboard",
+    "/assets/img/keyboard/keyboard-2.jpg",
+    "600"
+),
+(
+    "Apple Magic Mouse 2 White",
+    "Apple",
+    "Mouse",
+    "/assets/img/mouse/mouse-1.jpg",
+    "600"
+),
+(
+    "iPhone SE (2nd generation)",
+    "Apple",
+    "iPhone",
+    "/assets/img/iphone/iphone-6.jpg",
+    "600"
+),
+(
+    "iPhone 6s Plus",
+    "Apple",
+    "iPhone",
+    "/assets/img/iphone/iphone-7.jpg",
+    "600"
+);
+
+
 DROP TABLE IF EXISTS comment;
 CREATE TABLE comment (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -422,12 +179,12 @@ CREATE TABLE comment (
     detail TEXT(100) NOT NULL
 );
 INSERT INTO comment(product_id, username, time, detail)
-VALUES (1, 'tri.hobknetid', '2020-12-27', "Lorem ispum"),
-    (1, 'tri.hobknetid', '2020-12-27', "Lorem ispum"),
-    (1, 'tri.hobknetid', '2020-12-27', "Lorem ispum"),
-    (1, 'tri.hobknetid', '2020-12-27', "Lorem ispum"),
-    (1, 'tri.hobknetid', '2020-12-27', "Lorem ispum"),
-    (1, 'tri.hobknetid', '2020-12-27', "Lorem ispum");
+VALUES (1, 'vietduc', '2020-12-27', "Lorem ispum"),
+    (1, 'vietduc', '2020-12-27', "Lorem ispum"),
+    (1, 'vietduc', '2020-12-27', "Lorem ispum"),
+    (1, 'vietduc', '2020-12-27', "Lorem ispum"),
+    (1, 'vietduc', '2020-12-27', "Lorem ispum"),
+    (1, 'vietduc', '2020-12-27', "Lorem ispum");
 drop table if exists contact;
 create table contact(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -451,7 +208,7 @@ VALUES (
         "Dormitory Zone A - Linh Trung Ward - Thu Duc District -
 Ho Chi Minh City - Vietnam",
         '(+84) 81 647 7215',
-        "tinh.hoangbknetid@hcmut.edu.vn"
+        "duc.nguyen291@hcmut.edu.vn"
     );
 -- about
 drop table if exists staff;
@@ -473,10 +230,10 @@ insert into staff(
         url
     )
 values (
-        "Huỳnh Công Hải",
+        "Huỳnh Tuấn Đạt",
         "Full stack developer",
-        "hai.huynh.2101@hcmut.edu.vn",
-        "(+84) 94 223 9400",
+        "dat.huynh05122001@hcmut.edu.vn",
+        "(+84) 99 999 9999",
         "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan tincidunt.
  enim. Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.",
         "/assets/img/testimonial-1.jpg"
@@ -490,12 +247,11 @@ insert into staff(
         url
     )
 values (
-        "Trương Minh Hiệp",
+        "Nguyễn Việt Đức",
         "Full stack developer",
-        "hiep.truongminh@hcmut.edu.vn",
-        "(+84) 39 907 0916",
+        "duc.nguyen291@hcmut.edu.vn",
+        "(+84) 88 888 8888",
         "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan tincidunt.
-
 Ma Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.",
         "/assets/img/testimonial-2.jpg"
     );
@@ -508,10 +264,10 @@ insert into staff(
         url
     )
 values (
-        "Hoàng Vũ Tĩnh ",
-        "Back-end developer",
-        "tinh.hoangbknetid@hcmut.edu.vn",
-        "(+84) 81 647 7215",
+        "Trần Quốc Việt",
+        "Full stack developer",
+        "viet.tran544@hcmut.edu.vn",
+        "(+84) 77 777 7777",
         "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan tincidunt.
 etium ut lacinia in, elementum id enim. Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.",
         "/assets/img/testimonial-3.jpg"
@@ -525,10 +281,10 @@ insert into staff(
         url
     )
 values (
-        "Hồ Ngọc Trí",
-        "Back-end developer",
-        "tri.hobknetid@hcmut.edu.vn",
-        "(+84) 97 757 0593",
+        "Phan Anh Tú",
+        "Full stack developer",
+        "tu.phananhtu12st@hcmut.edu.vn",
+        "(+84) 66 666 6666",
         "Curabitur nisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.",
         "/assets/img/testimonial-4.jpg"
     );
@@ -550,7 +306,7 @@ values (
         "1",
         "admin",
         "admin",
-        "hai.huynh.2101@hcmut.edu.vn",
-        "Huỳnh Công Hải",
-        "(+84) 94 223 9400"
+        "dat.huynh05122001@hcmut.edu.vn",
+        "Huỳnh Tuấn Đạt",
+        "(+84) 99 999 9999"
     );

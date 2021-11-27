@@ -66,7 +66,8 @@
     </nav>
 
     <!-- ======= Products Section ======= -->
-    <section id="work" class="portfolio-mf sect-pt4 route">
+    <section id="home" class="">
+        <div class="overlay-white"></div>
         <div class="container">
             <div class="row animate__animated animate__fadeInDown">
                 <div class="col-sm-12">
@@ -97,7 +98,7 @@
                 if (!isset($_GET['action'])) {
                     if (!isset($_GET['type'])) {
                         //Display all categories
-                        $sql = "SELECT * FROM product WHERE 1";
+                        $sql = "SELECT * FROM product";
 
                         if ($stmt = $mysqli->prepare($sql)) {
                             if ($stmt->execute()) {
@@ -106,11 +107,11 @@
                                 $stmt->bind_result($id, $name, $author, $type, $url, $price);
                                 while ($stmt->fetch()) {
                 ?>
-                                    <div class="col-md-4 ">
-                                        <div class="work-box animate__animated animate__fadeInLeftBig">
-                                            <a href="detail.php?id=<?php echo $id ?>" data-gall="portfolioGallery" class="venobox">
-                                                <div class="work-img text-center">
-                                                    <?php echo '<img src="' . $url . '" alt="" class="img-fluid">' ?>
+                                    <div class="col-md-4 d-flex">
+                                        <div class="work-box animate__animated animate__fadeInLeftBig d-flex flex-column" style="width: 100%;">
+                                            <a href="detail.php?id=<?php echo $id ?>" data-gall="portfolioGallery" class="venobox" style="flex: 1;">
+                                                <div class="work-img text-center d-flex" style="height: 100%">
+                                                    <?php echo '<img src="' . $url . '" alt="" class="img-fluid" style="object-fit: cover;">' ?>
                                                 </div>
                                             </a>
                                             <div class="work-content">
@@ -119,16 +120,9 @@
                                                         <h2 class="w-title font-weight-bold"><?php echo $name ?></h2>
                                                         <p>Description: <?php echo $type ?></p>
                                                         <div class="w-more">
-                                                            <span class="w-category">Price</span> - <span><?php echo $price; ?></span>
+                                                            <span class="w-category">Price</span>: <span><?php echo $price; ?></span>
                                                         </div>
                                                     </div>
-                                                    <a href="detail.php?id=<?php echo $id; ?>">
-                                                        <div class="col-sm-4">
-                                                            <div class="w-like">
-                                                                <button class="btn btn-rounded btn-outline-primary"> <span class="fas fa-info" style="font-size: 24px; padding: 0 3px;"></span></button>
-                                                            </div>
-                                                        </div>
-                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -159,11 +153,11 @@
                                 }
                                 while ($stmt->fetch()) {
                                 ?>
-                                    <div class="col-md-4 ">
-                                        <div class="work-box animate__animated animate__fadeInLeftBig">
-                                            <a href="detail.php?id=<?php echo $id ?>" data-gall="portfolioGallery" class="venobox">
-                                                <div class="work-img text-center">
-                                                    <?php echo '<img src="' . $url . '" alt="" class="img-fluid">' ?>
+                                    <div class="col-md-4 d-flex">
+                                        <div class="work-box animate__animated animate__fadeInLeftBig d-flex flex-column" style="width: 100%;">
+                                            <a href="detail.php?id=<?php echo $id ?>" data-gall="portfolioGallery" class="venobox" style="flex: 1;">
+                                                <div class="work-img text-center d-flex" style="height: 100%">
+                                                    <?php echo '<img src="' . $url . '" alt="" class="img-fluid" style="object-fit: cover;">' ?>
                                                 </div>
                                             </a>
                                             <div class="work-content">
@@ -172,12 +166,7 @@
                                                         <h2 class="w-title font-weight-bold"><?php echo $name ?></h2>
                                                         <p>Description: <?php echo $type ?></p>
                                                         <div class="w-more">
-                                                            <span class="w-category">Price</span> - <span><?php echo $price; ?></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="w-like">
-                                                            <button class="btn btn-rounded btn-outline-primary" onclick="directDetail(<?php echo $id ?>)"> <span class="fas fa-info" style="font-size: 24px; padding: 0 3px;"></span></button>
+                                                            <span class="w-category">Price</span>: <span><?php echo $price; ?></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -212,11 +201,11 @@
                             <?php
                             while ($stmt->fetch()) {
                             ?>
-                                <div class="col-md-4 ">
-                                    <div class="work-box animate__animated animate__fadeInLeftBig">
-                                        <a href="detail.php?id=<?php echo $id ?>" data-gall="portfolioGallery" class="venobox">
-                                            <div class="work-img text-center">
-                                                <?php echo '<img src="' . $url . '" alt="" class="img-fluid">' ?>
+                                <div class="col-md-4 d-flex">
+                                    <div class="work-box animate__animated animate__fadeInLeftBig d-flex flex-column" style="width: 100%;">
+                                        <a href="detail.php?id=<?php echo $id ?>" data-gall="portfolioGallery" class="venobox" style="flex: 1;">
+                                            <div class="work-img text-center d-flex" style="height: 100%">
+                                                <?php echo '<img src="' . $url . '" alt="" class="img-fluid" style="object-fit: cover;">' ?>
                                             </div>
                                         </a>
                                         <div class="work-content">
@@ -225,12 +214,7 @@
                                                     <h2 class="w-title font-weight-bold"><?php echo $name ?></h2>
                                                     <p>Description: <?php echo $type ?></p>
                                                     <div class="w-more">
-                                                        <span class="w-category">Price</span> - <span><?php echo $price; ?></span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <div class="w-like">
-                                                        <button class="btn btn-rounded btn-outline-primary" onclick="directDetail(<?php echo $id ?>)"> <span class="fas fa-info" style="font-size: 24px; padding: 0 3px;"></span></button>
+                                                        <span class="w-category">Price</span>: <span><?php echo $price; ?></span>
                                                     </div>
                                                 </div>
                                             </div>
