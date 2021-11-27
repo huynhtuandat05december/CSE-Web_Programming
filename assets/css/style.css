@@ -223,6 +223,7 @@ a:hover {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .intro {
@@ -438,7 +439,7 @@ a:hover {
 }
 
 .work-content .w-more .w-category {
-  color: #0078ff;
+  color: #3e3e3e;
 }
 
 .work-content .w-more span {
@@ -645,6 +646,17 @@ a:hover {
   opacity: 0.7;
 }
 
+.overlay-white {
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0px;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.2;
+}
+
 .validate {
   display: none;
   color: red;
@@ -840,21 +852,6 @@ input {
 
 .login-container.right-panel-active .sign-in-container {
   transform: translateX(100%);
-}
-
-.sign-up-container {
-  transform: translateX(100%);
-  left: 0;
-  width: 50%;
-  opacity: 0;
-  z-index: 1;
-}
-
-.login-container.right-panel-active .sign-up-container {
-  transform: translateX(100%);
-  opacity: 1;
-  z-index: 5;
-  animation: show 0.6s;
 }
 
 @keyframes show {
