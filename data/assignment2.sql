@@ -413,6 +413,81 @@ values (
         "/assets/img/toys/toy-6.jpg",
         "15"
     );
+
+insert INTO product(name, author, type, url, price)
+values 
+(
+    "iPhone 13 Pro Max",
+    "Apple",
+    "iPhone",
+    "/assets/img/iphone/iphone-1.jpg",
+    "1000"
+),
+(
+    "iPhone 12 Pro Max",
+    "Apple",
+    "iPhone",
+    "/assets/img/iphone/iphone-2.jpg",
+    "900"
+),
+(
+    "iPhone 11 Pro Max",
+    "Apple",
+    "iPhone",
+    "/assets/img/iphone/iphone-3.jpg",
+    "800"
+),
+(
+    "iPhone XS Max",
+    "Apple",
+    "iPhone",
+    "/assets/img/iphone/iphone-4.jpg",
+    "700"
+),
+(
+    "iPhone 8 Plus",
+    "Apple",
+    "iPhone",
+    "/assets/img/iphone/iphone-5.jpg",
+    "600"
+),
+(
+    "Apple Magic Keyboard 2",
+    "Apple",
+    "Keyboard",
+    "/assets/img/keyboard/keyboard-1.jpg",
+    "600"
+),
+(
+    "Apple Magic Keyboard 2 with Numpad",
+    "Apple",
+    "Keyboard",
+    "/assets/img/keyboard/keyboard-2.jpg",
+    "600"
+),
+(
+    "Apple Magic Mouse 2 White",
+    "Apple",
+    "Mouse",
+    "/assets/img/mouse/mouse-1.jpg",
+    "600"
+),
+(
+    "iPhone SE (2nd generation)",
+    "Apple",
+    "iPhone",
+    "/assets/img/iphone/iphone-6.jpg",
+    "600"
+),
+(
+    "iPhone 6s Plus",
+    "Apple",
+    "iPhone",
+    "/assets/img/iphone/iphone-7.jpg",
+    "600"
+);
+
+
 DROP TABLE IF EXISTS comment;
 CREATE TABLE comment (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -422,12 +497,12 @@ CREATE TABLE comment (
     detail TEXT(100) NOT NULL
 );
 INSERT INTO comment(product_id, username, time, detail)
-VALUES (1, 'tri.hobknetid', '2020-12-27', "Lorem ispum"),
-    (1, 'tri.hobknetid', '2020-12-27', "Lorem ispum"),
-    (1, 'tri.hobknetid', '2020-12-27', "Lorem ispum"),
-    (1, 'tri.hobknetid', '2020-12-27', "Lorem ispum"),
-    (1, 'tri.hobknetid', '2020-12-27', "Lorem ispum"),
-    (1, 'tri.hobknetid', '2020-12-27', "Lorem ispum");
+VALUES (1, 'vietduc', '2020-12-27', "Lorem ispum"),
+    (1, 'vietduc', '2020-12-27', "Lorem ispum"),
+    (1, 'vietduc', '2020-12-27', "Lorem ispum"),
+    (1, 'vietduc', '2020-12-27', "Lorem ispum"),
+    (1, 'vietduc', '2020-12-27', "Lorem ispum"),
+    (1, 'vietduc', '2020-12-27', "Lorem ispum");
 drop table if exists contact;
 create table contact(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -451,7 +526,7 @@ VALUES (
         "Dormitory Zone A - Linh Trung Ward - Thu Duc District -
 Ho Chi Minh City - Vietnam",
         '(+84) 81 647 7215',
-        "tinh.hoangbknetid@hcmut.edu.vn"
+        "duc.nguyen291@hcmut.edu.vn"
     );
 -- about
 drop table if exists staff;
@@ -473,10 +548,10 @@ insert into staff(
         url
     )
 values (
-        "Huỳnh Công Hải",
+        "Huỳnh Tuấn Đạt",
         "Full stack developer",
-        "hai.huynh.2101@hcmut.edu.vn",
-        "(+84) 94 223 9400",
+        "dat.huynh05122001@hcmut.edu.vn",
+        "(+84) 99 999 9999",
         "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan tincidunt.
  enim. Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.",
         "/assets/img/testimonial-1.jpg"
@@ -490,12 +565,11 @@ insert into staff(
         url
     )
 values (
-        "Trương Minh Hiệp",
+        "Nguyễn Việt Đức",
         "Full stack developer",
-        "hiep.truongminh@hcmut.edu.vn",
-        "(+84) 39 907 0916",
+        "duc.nguyen291@hcmut.edu.vn",
+        "(+84) 88 888 8888",
         "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan tincidunt.
-
 Ma Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.",
         "/assets/img/testimonial-2.jpg"
     );
@@ -508,10 +582,10 @@ insert into staff(
         url
     )
 values (
-        "Hoàng Vũ Tĩnh ",
-        "Back-end developer",
-        "tinh.hoangbknetid@hcmut.edu.vn",
-        "(+84) 81 647 7215",
+        "Trần Quốc Việt",
+        "Full stack developer",
+        "viet.tran544@hcmut.edu.vn",
+        "(+84) 77 777 7777",
         "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan tincidunt.
 etium ut lacinia in, elementum id enim. Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.",
         "/assets/img/testimonial-3.jpg"
@@ -525,10 +599,10 @@ insert into staff(
         url
     )
 values (
-        "Hồ Ngọc Trí",
-        "Back-end developer",
-        "tri.hobknetid@hcmut.edu.vn",
-        "(+84) 97 757 0593",
+        "Phan Anh Tú",
+        "Full stack developer",
+        "tu.phananhtu12st@hcmut.edu.vn",
+        "(+84) 66 666 6666",
         "Curabitur nisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.",
         "/assets/img/testimonial-4.jpg"
     );
@@ -550,7 +624,7 @@ values (
         "1",
         "admin",
         "admin",
-        "hai.huynh.2101@hcmut.edu.vn",
-        "Huỳnh Công Hải",
-        "(+84) 94 223 9400"
+        "dat.huynh05122001@hcmut.edu.vn",
+        "Huỳnh Tuấn Đạt",
+        "(+84) 99 999 9999"
     );
