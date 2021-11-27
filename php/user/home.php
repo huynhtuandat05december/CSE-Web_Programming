@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,41 +32,10 @@
 
 <body data-new-gr-c-s-check-loaded="8.867.0">
     <!--Header / Navbar-->
-    <nav id="mainNav" class="navbar navbar-expand-md fixed-top animate__animated animate__slideInDown">
-        <div class="container d-flex justify-content-between align-items-center flex-wrap">
-            <div>
-                <?php
-                session_start();
-                if (!isset($_SESSION['username'])) {
-                    echo '<button class="login-btn btn btn-outline-primary" onclick="directLogin()">Login</button>';
-                } else {
-                    echo "<button style='font-size:24px' class='btn btn-outline-primary btn-rounded' onclick='directInformation()'><i class='fas fa-user-circle'></i></button>";
-                }
-                ?>
-            </div>
-            <a href="index.php" class="navbar-brand font-weight-bold" id="projectName">Apple Store</a>
-            <button type="button" class="btn" data-toggle="collapse" data-target="#navbarDefault"><i class="material-icons" id="nav-icon">menu</i></button>
-            <div id="navbarDefault" class="navbar-collapse collapse justify-content-center align-items-center">
-                <ul class="nav navbar-nav text-uppercase font-weight-bold">
-                    <li class="nav-item">
-                        <a href="home.php" class="nav-link nav-link-hover active-item">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="about.php" class="nav-link nav-link-hover">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="categories.php" class="nav-link nav-link-hover">Categories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="products.php" class="nav-link nav-link-hover">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact.php" class="nav-link nav-link-hover">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php
+    $active_page = 'home';
+    require_once 'header.php'
+    ?>
     <!--Intro Section-->
     <div id="home" class="intro justify-content-center align-items-center d-flex">
         <div class="intro-overlay"></div>
@@ -76,11 +49,6 @@
             }
             ?>
         </div>
-        <?php
-        if (isset($_SESSION['username'])) {
-            echo '<button class="btn btn-primary float" onclick="logout()"><i class="fa fa-arrow-right"></i></button>';
-        }
-        ?>
     </div>
     <!--Preloader-->
     <div id="preloader"></div>

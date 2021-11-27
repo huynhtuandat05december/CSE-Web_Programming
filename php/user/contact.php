@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,6 +30,7 @@
 
 <body data-new-gr-c-s-check-loaded="8.867.0" style="background-image:url('https://images.unsplash.com/photo-1501676491272-7bbd3e71f7e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=838&q=80'); background-attachment: fixed; background-size: cover;">
     <?php
+    $active_page = 'contact';
     require_once 'header.php'
     ?>
     <!--Contact Section-->

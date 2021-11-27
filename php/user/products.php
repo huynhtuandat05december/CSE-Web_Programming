@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +23,35 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <script src="/assets/js/main.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <style>
+        /* Pagination */
+        #pagination {
+            text-align: right;
+            padding: 0.5rem 1rem 1rem;
+            z-index: 100;
+        }
 
+        .page-item {
+            padding: 5px 9px;
+            color: #7200cf;
+            background-color: #fff;
+
+            border-radius: 2px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .page-item:hover {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .current-page {
+            background-color: #7200cf;
+            color: #fff;
+        }
+    </style>
 
     <!--Animation.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -29,41 +61,10 @@
 
 <body data-new-gr-c-s-check-loaded="8.867.0" id="page-body">
     <!--Header / Navbar-->
-    <nav id="mainNav" class="navbar navbar-expand-md fixed-top animate__animated animate__slideInDown">
-        <div class="container d-flex justify-content-between align-items-center flex-wrap">
-            <div>
-                <?php
-                session_start();
-                if (!isset($_SESSION['username'])) {
-                    echo '<button class="login-btn btn btn-outline-primary" onclick="directLogin()">Login</button>';
-                } else {
-                    echo "<button style='font-size:24px' class='btn btn-outline-primary btn-rounded' onclick='directInformation()'><i class='fas fa-user-circle'></i></button>";
-                }
-                ?>
-            </div>
-            <a href="index.php" class="navbar-brand font-weight-bold" id="projectName">Apple Store</a>
-            <button type="button" class="btn" data-toggle="collapse" data-target="#navbarDefault"><i class="material-icons" id="nav-icon">menu</i></button>
-            <div id="navbarDefault" class="navbar-collapse collapse justify-content-center align-items-center">
-                <ul class="nav navbar-nav text-uppercase font-weight-bold">
-                    <li class="nav-item">
-                        <a href="home.php" class="nav-link nav-link-hover">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="about.php" class="nav-link nav-link-hover">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="categories.php" class="nav-link nav-link-hover">Categories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="products.php" class="nav-link nav-link-hover active-item">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact.php" class="nav-link nav-link-hover">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php
+    $active_page = 'products';
+    require_once 'header.php'
+    ?>
 
     <!-- ======= Products Section ======= -->
     <section id="home" class="">
@@ -96,9 +97,18 @@
                 require_once "config.php";
 
                 if (!isset($_GET['action'])) {
+                    // Pagination
+                    $item_per_page = !empty($_GET['per_page']) ? $_GET['per_page'] : 9;
+                    $current_page = !empty($_GET['page']) ? $_GET['page'] : 1; //Current page
+                    $offset = ($current_page - 1) * $item_per_page;
+
                     if (!isset($_GET['type'])) {
+                        // Calculate total rows
+                        $totalRecords = $mysqli->query("SELECT * FROM product");
+                        $totalRecords = $totalRecords->num_rows;
+                        $totalPages = ceil($totalRecords / $item_per_page);
                         //Display all categories
-                        $sql = "SELECT * FROM product";
+                        $sql = "SELECT * FROM product limit " . $offset . "," . $item_per_page . " ";
 
                         if ($stmt = $mysqli->prepare($sql)) {
                             if ($stmt->execute()) {
@@ -129,6 +139,7 @@
                                     </div>
                                 <?php
                                 }
+                                include 'pagination.php';
                             }
                         }
                     } else //Case display with type
@@ -231,11 +242,6 @@
         </div>
     </section>
     <!-- End Portfolio Section -->
-    <?php
-    if (isset($_SESSION['username'])) {
-        echo '<button class="btn btn-primary float" onclick="logout()"><i class="fa fa-arrow-right"></i></button>';
-    }
-    ?>
     <!--Back to to-->
     <a href="#page-body" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
     <!--Preloader-->

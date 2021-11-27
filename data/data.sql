@@ -1,12 +1,11 @@
-drop schema if exists assignment2;
-create schema assignment2;
-use assignment2;
+drop schema if exists assignment;
+create schema assignment;
+use assignment;
 drop table if exists product;
 create table product(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name varchar(59),
     author varchar(50),
-    -- author name for book and producer for another products
     type varchar(50),
     url varchar(100),
     price int
@@ -28,70 +27,70 @@ insert INTO product(name, author, type, url, price)
 values (
         "Apple Watch 7 Thép",
         "Apple",
-        "Watch",
+        "Accessories",
         "/assets/img/watchs/watch-1.jpg",
         "899"
     ),
     (
         "Apple Watch 7 Nhôm",
         "Apple",
-        "Watch",
+        "Accessories",
         "/assets/img/watchs/watch-2.jpg",
         "899"
     ),
     (
         "Apple Watch 5 Nike",
         "Apple",
-        "Watch",
+        "Accessories",
         "/assets/img/watchs/watch-3.png",
         "499"
     ),
     (
         "AirPods (gen 3)",
         "Apple",
-        "Airpod",
+        "Accessories",
         "/assets/img/airpods/airpod-1.png",
         "259"
     ),
     (
         "AirPods Max",
         "Apple",
-        "Airpod",
+        "Accessories",
         "/assets/img/airpods/airpod-2.webp",
         "359"
     ),
     (
         "AirPods 2",
         "Apple",
-        "Airpod",
+        "Accessories",
         "/assets/img/airpods/airpod-3.png",
         "159"
     ),
     (
         "AirPods Pro",
         "Apple",
-        "Airpod",
+        "Accessories",
         "/assets/img/airpods/airpod-4.jpeg",
         "299"
     ),
     (
         "Apple AirTag",
         "Apple",
-        "Airtag",
+        "Accessories",
         "/assets/img/airtags/airtag-1.png",
         "29"
     ),
     (
         "AirTag Leather Key Ring",
         "Apple",
-        "Airtag",
+        "Accessories",
         "/assets/img/airtags/airtag-2.jpeg",
         "49"
     ),
     (
         "Apple Polishing Cloth",
         "Apple",
-        "Airtag",
+        "Accessories",
         "/assets/img/apple-polishing-cloth.jpg",
         "39"
     );
@@ -136,21 +135,21 @@ values
 (
     "Apple Magic Keyboard 2",
     "Apple",
-    "Keyboard",
+    "accessories",
     "/assets/img/keyboard/keyboard-1.jpg",
     "600"
 ),
 (
     "Apple Magic Keyboard 2 with Numpad",
     "Apple",
-    "Keyboard",
+    "accessories",
     "/assets/img/keyboard/keyboard-2.jpg",
     "600"
 ),
 (
     "Apple Magic Mouse 2 White",
     "Apple",
-    "Mouse",
+    "accessories",
     "/assets/img/mouse/mouse-1.jpg",
     "600"
 ),
@@ -167,6 +166,95 @@ values
     "iPhone",
     "/assets/img/iphone/iphone-7.jpg",
     "600"
+);
+
+-- iMac
+insert INTO product(name, author, type, url, price)
+values 
+(
+    "iMac 24 2021 M1",
+    "Apple",
+    "imac",
+    "/assets/img/imac/imac-24-icnh-2021-m1.jpg",
+    "1500"
+),
+(
+    "iMac 27 5K 2020",
+    "Apple",
+    "imac",
+    "/assets/img/imac/imac-21-inch-2020.png",
+    "1800"
+);
+
+-- iPad
+insert INTO product(name, author, type, url, price)
+values 
+(
+    "iPad Pro M1 12.9 inch 2021",
+    "Apple",
+    "iPad",
+    "/assets/img/ipad/ipad-pro-2021.jpg",
+    "1700"
+),
+(
+    "iPad mini 6",
+    "Apple",
+    "iPad",
+    "/assets/img/ipad/ipad-mini-6.jpg",
+    "1100"
+),
+(
+    "iPad Air 4",
+    "Apple",
+    "iPad",
+    "/assets/img/ipad/ipad-4.jpg",
+    "1000"
+),
+(
+    "iPad 9",
+    "Apple",
+    "iPad",
+    "/assets/img/ipad/ipad-gen-9.jpg",
+    "800"
+),
+(
+    "ipad 8",
+    "Apple",
+    "iPad",
+    "/assets/img/ipad/ipad-gen-8.jpg",
+    "500"
+);
+
+-- macbook
+insert INTO product(name, author, type, url, price)
+values 
+(
+    "MacBook Pro 14 M1 Pro 2021",
+    "Apple",
+    "macbook",
+    "/assets/img/macbook/apple-macbook-pro-14-m1-pro-2021.jpg",
+    "2400"
+),
+(
+    "MacBook Pro 16 M1 Pro 2021",
+    "Apple",
+    "macbook",
+    "/assets/img/macbook/apple-macbook-pro-16-m1-pro-2021.jpg",
+    "3100"
+),
+(
+    "MacBook Pro M1 2020",
+    "Apple",
+    "macbook",
+    "/assets/img/macbook/apple-macbook-pro-m1-2020.jpg",
+    "2200"
+),
+(
+    "MacBook Air M1 2020",
+    "Apple",
+    "macbook",
+    "/assets/img/macbook/macbook-air-m1-2020.jpg",
+    "1400"
 );
 
 
@@ -205,8 +293,7 @@ create table information(
 INSERT INTO information(detail, address, phone, email)
 VALUES (
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolorum dolorem soluta quidem expedita aperiam aliquid at. Totam magni ipsum suscipit amet? Autem nemo esse laboriosam ratione nobis mollitia inventore?",
-        "Dormitory Zone A - Linh Trung Ward - Thu Duc District -
-Ho Chi Minh City - Vietnam",
+        "Thu Duc District, Ho Chi Minh City, Vietnam",
         '(+84) 81 647 7215',
         "duc.nguyen291@hcmut.edu.vn"
     );

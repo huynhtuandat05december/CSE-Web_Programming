@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,9 +29,10 @@
     <title>About</title>
 </head>
 
-<body data-new-gr-c-s-check-loaded="8.867.0" id="page-body" style="background-image:url('https://images.unsplash.com/photo-1512429234305-12fe5b0b0f07?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'); background-attachment: fixed; background-size: cover;">
+<body data-new-gr-c-s-check-loaded="8.867.0" id="page-body" style="background-image:url('/assets/img/intro-bg.png'); background-attachment: fixed; background-size: cover;">
     <!--Header / Navbar-->
     <?php
+    $active_page = 'about';
     require_once 'header.php';
     ?>
     <!--About section-->

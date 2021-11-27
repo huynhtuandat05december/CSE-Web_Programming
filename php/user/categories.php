@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,6 +36,7 @@
 <body data-new-gr-c-s-check-loaded="8.867.0" style="background-image:url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=726&q=80'); background-attachment: fixed; background-size: cover;">
     <!--Header / Navbar-->
     <?php
+    $active_page = 'categories';
     require_once 'header.php';
     ?>
     <section id="service" class="services-mf">
@@ -53,7 +58,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4 animate__animated animate__fadeInLeftBig">
-                    <a href="products.php?type=Domestic book">
+                    <a href="products.php?type=imac">
                         <div class="service-box">
                             <div class="service-ico">
                                 <span class="ico-circle">
@@ -67,7 +72,7 @@
                     </a>
                 </div>
                 <div class="col-md-4 animate__animated animate animate__fadeInDownBig">
-                    <a href="products.php?type=International">
+                    <a href="products.php?type=macbook">
                         <div class="service-box">
                             <div class="service-ico">
                                 <span class="ico-circle">
@@ -81,7 +86,7 @@
                     </a>
                 </div>
                 <div class="col-md-4 animate__animated animate__fadeInRightBig">
-                    <a href="products.php?type=Electronics">
+                    <a href="products.php?type=iphone">
                         <div class="service-box">
                             <div class="service-ico">
                                 <span class="ico-circle">
@@ -97,7 +102,7 @@
             </div>
             <div class="row d-flex justify-content-center">
                 <div class="col-md-4 animate__animated animate__fadeInLeftBig">
-                    <a href="products.php?type=Souvenirs">
+                    <a href="products.php?type=ipad">
                         <div class="service-box">
                             <div class="service-ico">
                                 <span class="ico-circle">
@@ -111,7 +116,7 @@
                     </a>
                 </div>
                 <div class="col-md-4 animate__animated animate__fadeInUpBig">
-                    <a href="products.php?type=Stationary">
+                    <a href="products.php?type=accessories">
                         <div class="service-box">
                             <div class="service-ico">
                                 <span class="ico-circle">
