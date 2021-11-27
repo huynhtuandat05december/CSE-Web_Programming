@@ -1,9 +1,10 @@
-@import url("https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css");
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url('https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@500&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 :root {
-  --color-active: #7200CF;
+  --color-active: #7200cf;
   --color-text: #4e4e4e;
   --color-bg: #f5f5f5;
   --color-heading: #1e1e1e;
@@ -55,8 +56,8 @@ a:hover {
   position: relative;
 }
 .login-btn::after {
-  content: "\f101";
-  font-family: "FontAwesome";
+  content: '\f101';
+  font-family: 'FontAwesome';
   font-weight: 400;
   position: absolute;
   left: 80%;
@@ -70,7 +71,7 @@ a:hover {
 .login-btn:hover {
   transition: all 0.5s;
   border-radius: 10px;
-  box-shadow: 0px 6px 15px #7200CF61;
+  box-shadow: 0px 6px 15px #7200cf61;
   padding: 0.25rem 3rem 0.5rem 2rem;
   color: #ffffff;
 }
@@ -84,6 +85,8 @@ a:hover {
 #projectName {
   font-size: 1.5rem;
   color: var(--color-active);
+  font-family: 'Sora', sans-serif;
+  font-weight: bold;
 }
 
 #mainNav {
@@ -112,16 +115,24 @@ a:hover {
 }
 
 .nav-link-hover:before {
-  content: "";
+  content: '';
   position: absolute;
   height: 3px;
-  background-color: #7200CF;
+  background-color: #7200cf;
   transition: all 1s ease-in-out;
   width: 0;
   top: 50px;
 }
 .nav-link-hover:hover:before {
   width: 50px;
+}
+
+.navbar .fas {
+  font-size: 24px;
+}
+
+.navbar .navbar-toggler:focus {
+  box-shadow: 0 0 5px 5px var(--color-active);
 }
 
 @media screen and (max-width: 414px) {
@@ -272,8 +283,8 @@ a:hover {
   width: 100%;
 }
 
-.section-mt-10 {
-  margin-top: 10rem;
+.section-mt-5 {
+  margin-top: 4rem;
 }
 
 .box-shadow-full {
@@ -281,6 +292,7 @@ a:hover {
   position: relative;
   background-color: #fff;
   margin-bottom: 3rem;
+  border-radius: 10px;
   z-index: 2;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
 }
@@ -289,58 +301,53 @@ a:hover {
   margin: auto;
 }
 
-.about-mf .about-img {
-  margin-bottom: 2rem;
-}
-
-.about-mf .about-img img {
-  margin-left: 10px;
-}
-
 .skill-mf span {
   color: #4e4e4e;
 }
 
 .skill-mf .progress {
   background-color: #cde1f8;
-  margin: 0.5rem 0 1.2rem 0;
-  border-radius: 0;
-  height: 0.7rem;
+  margin: 0.25rem 0 0.5rem 0;
+  border-radius: 5px;
+  height: 0.6rem;
 }
 
 .skill-mf .progress .progress-bar {
-  height: 0.7rem;
-  background-color: #0078ff;
+  height: 0.6rem;
+  background-color: var(--color-active);
 }
 
 .title-s {
-  font-weight: 600;
-  color: #1e1e1e;
-  font-size: 1.1rem;
+  font-weight: bold;
+  font-size: 1.25rem;
 }
 
 .title-box-2 {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .title-left {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
   position: relative;
 }
 
 .title-left:before {
-  content: "";
+  content: '';
   position: absolute;
   height: 3px;
-  background-color: #0078ff;
-  transition: all 1s ease-in-out;
+  background-color: var(--color-active);
   width: 100px;
-  bottom: -12px;
+  bottom: -10px;
 }
 
 /*--------------------------------------------------------------
 # Services section
 --------------------------------------------------------------*/
+.services-mf {
+  padding-top: 90px;
+}
+
 .service-box {
   background-color: #fff;
   padding: 2.5rem 1.3rem;
@@ -351,8 +358,8 @@ a:hover {
 .service-box:hover .ico-circle {
   transition: all 500ms ease;
   color: #fff;
-  background-color: #0078ff;
-  box-shadow: 0 0 0 10px #cde1f8;
+  background-color: var(--color-active);
+  box-shadow: 0 0 0 10px #cc99cc;
 }
 
 .service-box .service-ico {
@@ -363,6 +370,7 @@ a:hover {
 .service-box .ico-circle {
   transition: all 500ms ease;
   font-size: 4rem;
+  box-shadow: 0 0 0 10px var(--color-active);
 }
 
 .service-box .s-title {
@@ -382,8 +390,13 @@ a:hover {
   text-transform: uppercase;
 }
 
+.title-a i {
+  transform: translateY(-2px);
+}
+
 .subtitle-a {
   color: #4e4e4e;
+  font-size: 1.25rem;
 }
 
 .ico-circle {
@@ -394,7 +407,7 @@ a:hover {
   line-height: 1.55;
   margin: 0 auto;
   text-align: center;
-  box-shadow: 0 0 0 10px #0078ff;
+  box-shadow: 0 0 0 10px var(--color-active);
   display: block;
 }
 
@@ -443,16 +456,14 @@ a:hover {
 }
 
 .work-content .w-more span {
-    font-size: 20px;
-  }
-  
+  font-size: 20px;
+}
 
 .work-content .w-like {
   font-size: 2.5rem;
   color: #0078ff;
   float: right;
 }
-
 
 .work-content .w-like a {
   color: #0078ff;
@@ -466,13 +477,13 @@ a:hover {
   font-size: 1.2rem;
 }
 
-.card-header img{
-    float: left;
-    left: -100px;
-    top:-300px;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
+.card-header img {
+  float: left;
+  left: -100px;
+  top: -300px;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
 }
 
 /*--------------------------------------------------------------
@@ -623,15 +634,8 @@ a:hover {
 }
 
 /*----------Contact----------*/
-#contact-section {
-  background-image: url(assets/img/overlay-bg.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
 .contact {
+  padding-top: 150px;
   box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
 }
 
@@ -660,15 +664,17 @@ a:hover {
 .validate {
   display: none;
   color: red;
-  margin: 0 0 15px 0;
+  margin: 0 0 15px 0; 
   font-weight: 400;
   font-size: 13px;
 }
 
 .sent-message {
   display: none;
-  color: #fff;
-  background: #18d26e;
+  color: #18d26e;
+  background: #fff;
+  border: 2px solid #18d26e;
+  border-radius: 5px;
   text-align: center;
   padding: 15px;
   font-weight: 600;
@@ -678,36 +684,45 @@ a:hover {
   border-radius: 2.5rem;
 }
 
-.list-icon {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 0;
+.btn-send-message {
+  color: var(--color-active);
+  border-color: var(--color-active);
+  font-weight: bold;
+  border-radius: 1rem;
 }
 
-.list-icon li {
-  display: flex;
-  align-items: center;
-  margin: 5px;
+.btn-send-message:hover {
+  color: #fff;
+  background-color: var(--color-active);
+  border-color: var(--color-active);
 }
+
+.list-icon > div {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.5rem 0;
+}
+
 .list-icon span {
-  color: var(--color-active);
+  width: 65px;
+  color: var(--color-text);
   margin-right: 10px;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .socials {
-  padding: 1.5rem 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
 }
 
-.socials ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.socials ul li {
+.socials a {
   display: inline-block;
+}
+
+.socials span {
+  font-weight: bold;
 }
 
 .socials .ico-circle {
@@ -717,14 +732,14 @@ a:hover {
   border-radius: 50%;
   line-height: 1.4;
   margin: 0 15px 0 0;
-  box-shadow: 0 0 0 3px #0078ff;
+  box-shadow: 0 0 0 3px var(--color-active);
   transition: all 500ms ease;
 }
 
 .socials .ico-circle:hover {
-  background-color: #0078ff;
+  background-color: var(--color-active);
   color: #fff;
-  box-shadow: 0 0 0 3px #cde1f8;
+  box-shadow: 0 0 0 3px #cc99cc;
   transition: all 500ms ease;
 }
 
@@ -736,8 +751,19 @@ a:hover {
   line-height: 1.55;
   margin: 0 auto;
   text-align: center;
-  box-shadow: 0 0 0 10px #0078ff;
+  box-shadow: 0 0 0 10px var(--color-active);
   display: block;
+}
+
+#toggle-send-message {
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+#toggle-send-message:focus {
+  box-shadow: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -778,7 +804,6 @@ a:hover {
     padding: 1.5rem;
   }
 }
-
 /*-------Login----*/
 .main {
   position: relative;
@@ -841,7 +866,7 @@ input {
 }
 
 .form-container h1 {
-  color: #7200CF;
+  color: #7200cf;
 }
 
 .sign-in-container {
@@ -952,7 +977,7 @@ input {
 /*------Back to top-------*/
 .back-to-top {
   position: fixed;
-  background: #7200CF;
+  background: #7200cf;
   color: #fff;
   width: 44px;
   height: 44px;
@@ -1032,95 +1057,95 @@ input {
 /*-----Product detail-----*/
 
 .product-title {
-    margin-top: 150px;
-    background-color: white;
-    box-shadow: 3px grey;
+  margin-top: 150px;
+  background-color: white;
+  box-shadow: 3px grey;
 }
 
-
 .portfolio-details {
-    padding-top: 30px;
-  }
-  
-  .portfolio-details .portfolio-details-container {
-    position: relative;
-  }
-  
-  .portfolio-details .portfolio-details-carousel {
-    position: relative;
-    z-index: 1;
-  }
-  
-  .portfolio-details .portfolio-details-carousel .owl-nav, .portfolio-details .portfolio-details-carousel .owl-dots {
-    margin-top: 5px;
-    text-align: left;
-  }
-  
-  .portfolio-details .portfolio-details-carousel .owl-dot {
-    display: inline-block;
-    margin: 0 10px 0 0;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #ddd !important;
-  }
-  
-  .portfolio-details .portfolio-details-carousel .owl-dot.active {
-    background-color: #0078ff !important;
-  }
-  
-  .portfolio-details .portfolio-info {
-    padding: 30px;
-    position: absolute;
-    right: 0;
-    bottom: -70px;
-    background: #fff;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-    z-index: 2;
-  }
-  
-  .portfolio-details .portfolio-info h3 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .portfolio-details .portfolio-info ul {
-    list-style: none;
-    padding: 0;
-    font-size: 15px;
-  }
-  
-  .portfolio-details .portfolio-info ul li + li {
-    margin-top: 10px;
-  }
-  
-  .portfolio-details .portfolio-description {
-    padding-top: 50px;
-  }
-  
+  padding-top: 30px;
+}
+
+.portfolio-details .portfolio-details-container {
+  position: relative;
+}
+
+.portfolio-details .portfolio-details-carousel {
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-details .portfolio-details-carousel .owl-nav,
+.portfolio-details .portfolio-details-carousel .owl-dots {
+  margin-top: 5px;
+  text-align: left;
+}
+
+.portfolio-details .portfolio-details-carousel .owl-dot {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ddd !important;
+}
+
+.portfolio-details .portfolio-details-carousel .owl-dot.active {
+  background-color: #0078ff !important;
+}
+
+.portfolio-details .portfolio-info {
+  padding: 30px;
+  position: absolute;
+  right: 0;
+  bottom: -70px;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.portfolio-details .portfolio-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.portfolio-details .portfolio-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+.portfolio-details .portfolio-info ul li + li {
+  margin-top: 10px;
+}
+
+.portfolio-details .portfolio-description {
+  padding-top: 50px;
+}
+
+.portfolio-details .portfolio-description h2 {
+  width: 50%;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.portfolio-details .portfolio-description p {
+  padding: 0 0 0 0;
+}
+
+@media (max-width: 768px) {
   .portfolio-details .portfolio-description h2 {
-    width: 50%;
-    font-size: 26px;
-    font-weight: 700;
-    margin-bottom: 20px;
+    width: 100%;
   }
-  
-  .portfolio-details .portfolio-description p {
-    padding: 0 0 0 0;
+  .portfolio-details .portfolio-info {
+    position: static;
+    margin-top: 30px;
   }
-  
-  @media (max-width: 768px) {
-    .portfolio-details .portfolio-description h2 {
-      width: 100%;
-    }
-    .portfolio-details .portfolio-info {
-      position: static;
-      margin-top: 30px;
-    }
-  }
+}
 
 /*Preloader*/
 /*------/ Preloader /------*/
@@ -1136,7 +1161,7 @@ input {
 }
 
 #preloader:before {
-  content: "";
+  content: '';
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
@@ -1183,48 +1208,55 @@ input {
   margin: 0;
 }
 
-.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-  background-color: #7200CF !important;
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+  background-color: #7200cf !important;
 }
 
-.btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary:visited, .btn-outline-primary:focus {
+.btn-outline-primary,
+.btn-outline-primary:active,
+.btn-outline-primary:visited,
+.btn-outline-primary:focus {
   color: black;
-  border-color:#7200CF;
-  box-shadow: 0 0 0 .2rem rgba(114, 0, 207, 0.5)
+  border-color: #7200cf;
+  box-shadow: 0 0 0 0.2rem rgba(114, 0, 207, 0.5);
 }
 
 .btn-outline-primary:hover {
-  color:white;
-  border-color:#7200CF;
-  background-color:#7200CF;
+  color: white;
+  border-color: #7200cf;
+  background-color: #7200cf;
 }
 
 .form-control:focus {
-  border-color: #7200CF;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(114, 0, 207, 0.6);
+  border-color: #7200cf;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(114, 0, 207, 0.6);
 }
 
 .btn-outline-primary:focus,
 .btn-outline-primary.focus {
-  box-shadow: 0 0 0 .2rem rgba(114, 0, 207, 0.5)
+  box-shadow: 0 0 0 0.2rem rgba(114, 0, 207, 0.5);
 }
 
 .btn-outline-primary.disabled,
 .btn-outline-primary:disabled {
-  color: #7200CF;
-  background-color: transparent
+  color: #7200cf;
+  background-color: transparent;
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled):active,
 .btn-outline-primary:not(:disabled):not(.disabled).active,
-.show>.btn-outline-primary.dropdown-toggle {
+.show > .btn-outline-primary.dropdown-toggle {
   color: #212529;
-  background-color: #7200CF;
-  border-color: #7200CF
+  background-color: #7200cf;
+  border-color: #7200cf;
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
 .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
-.show>.btn-outline-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 .2rem rgba(114, 0, 207, 0.5)
+.show > .btn-outline-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(114, 0, 207, 0.5);
 }
