@@ -664,7 +664,7 @@ a:hover {
 .validate {
   display: none;
   color: red;
-  margin: 0 0 15px 0; 
+  margin: 0 0 15px 0;
   font-weight: 400;
   font-size: 13px;
 }
@@ -1260,3 +1260,4 @@ input {
 .show > .btn-outline-primary.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(114, 0, 207, 0.5);
 }
+
