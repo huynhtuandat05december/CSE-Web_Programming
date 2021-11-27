@@ -24,19 +24,19 @@
         <div id="navbarDefault" class="navbar-collapse order-md-3 collapse justify-content-center align-items-center">
             <ul class="nav navbar-nav text-uppercase font-weight-bold">
                 <li class="nav-item">
-                    <a href="home.php" class=<?= $active_page == 'home' ? 'nav-link nav-link-hover active-item' : 'nav-link nav-link-hover' ?>>Home</a>
+                    <a href="home.php" <?= $active_page == 'home' ? 'class="nav-link nav-link-hover active-item"' : 'class="nav-link nav-link-hover"' ?>>Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="categories.php" class=<?= $active_page == 'categories' ? 'nav-link nav-link-hover active-item' : 'nav-link nav-link-hover' ?>>Categories</a>
+                    <a href="categories.php" <?= $active_page == 'categories' ? 'class="nav-link nav-link-hover active-item"' : 'class="nav-link nav-link-hover"' ?>>Categories</a>
                 </li>
                 <li class="nav-item">
-                    <a href="products.php" class=<?= $active_page == 'products' ? 'nav-link nav-link-hover active-item' : 'nav-link nav-link-hover' ?>>Products</a>
+                    <a href="products.php" <?= $active_page == 'products' ? 'class="nav-link nav-link-hover active-item"' : 'class="nav-link nav-link-hover"' ?>>Products</a>
                 </li>
                 <li class="nav-item">
-                    <a href="contact.php" class=<?= $active_page == 'contact' ? 'nav-link nav-link-hover active-item' : 'nav-link nav-link-hover' ?>>Contact</a>
+                    <a href="contact.php" <?= $active_page == 'contact' ? 'class="nav-link nav-link-hover active-item"' : 'class="nav-link nav-link-hover"' ?>>Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a href="about.php" class=<?= $active_page == 'about' ? 'nav-link nav-link-hover active-item' : 'nav-link nav-link-hover' ?>>About</a>
+                    <a href="about.php" <?= $active_page == 'about' ? 'class="nav-link nav-link-hover active-item"' : 'class="nav-link nav-link-hover"' ?>>About</a>
                 </li>
             </ul>
         </div>
