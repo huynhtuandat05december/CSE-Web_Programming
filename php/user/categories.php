@@ -29,7 +29,7 @@
     <title>Categories</title>
 </head>
 
-<body data-new-gr-c-s-check-loaded="8.867.0">
+<body data-new-gr-c-s-check-loaded="8.867.0" style="background-image:url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=726&q=80'); background-attachment: fixed; background-size: cover;">
     <!--Header / Navbar-->
     <nav id="mainNav" class="navbar navbar-expand-md fixed-top animate__animated animate__slideInDown">
         <div class="container d-flex justify-content-between align-items-center flex-wrap">
@@ -43,7 +43,7 @@
                 }
                 ?>
             </div>
-            <a href="index.php" class="navbar-brand font-weight-bold" id="projectName">Apple Store</a>
+            <a href="index.php" class="navbar-brand font-weight-bold" id="projectName">Bookstore</a>
             <button type="button" class="btn" data-toggle="collapse" data-target="#navbarDefault"><i class="material-icons" id="nav-icon">menu</i></button>
             <div id="navbarDefault" class="navbar-collapse collapse justify-content-center align-items-center">
                 <ul class="nav navbar-nav text-uppercase font-weight-bold">
@@ -67,19 +67,19 @@
         </div>
     </nav>
 
-    <section id="service" class="services-mf pt-5 route">
+    <section id="service" class="services-mf">
         <div class="container">
             <div class="row animate__animated animate__fadeInDown">
                 <div class="col-sm-12">
                     <div class="service-box">
                         <div class="title-box text-center">
                             <h3 class="title-a">
-                                Book Store
+                                <i class="fab fa-apple"></i>
+                                Apple Store
                             </h3>
                             <p class="subtitle-a">
                                 Categories
                             </p>
-                            <div class="line-mf"></div>
                         </div>
                     </div>
                 </div>
@@ -90,11 +90,11 @@
                         <div class="service-box">
                             <div class="service-ico">
                                 <span class="ico-circle">
-                                    <i class="ion-ios-book"></i>
+                                    <i class="fas fa-desktop"></i>
                                 </span>
                             </div>
                             <div class="service-content">
-                                <h2 class="s-title">Domestic books</h2>
+                                <h2 class="s-title">Imac</h2>
                             </div>
                         </div>
                     </a>
@@ -104,11 +104,11 @@
                         <div class="service-box">
                             <div class="service-ico">
                                 <span class="ico-circle">
-                                    <i class="ion-ios-bookmarks"></i>
+                                    <i class="fas fa-laptop"></i>
                                 </span>
                             </div>
                             <div class="service-content">
-                                <h2 class="s-title">International books</h2>
+                                <h2 class="s-title">Macbook</h2>
                             </div>
                         </div>
                     </a>
@@ -118,27 +118,27 @@
                         <div class="service-box">
                             <div class="service-ico">
                                 <span class="ico-circle">
-                                    <i class="ion-ios-camera"></i>
+                                    <i class="fas fa-mobile-alt"></i>
                                 </span>
                             </div>
                             <div class="service-content">
-                                <h2 class="s-title">Electronics</h2>
+                                <h2 class="s-title">Iphone</h2>
                             </div>
                         </div>
                     </a>
                 </div>
             </div>
-            <div class="row">
+            <div class="row d-flex justify-content-center">
                 <div class="col-md-4 animate__animated animate__fadeInLeftBig">
                     <a href="products.php?type=Souvenirs">
                         <div class="service-box">
                             <div class="service-ico">
                                 <span class="ico-circle">
-                                    <i class="ion-android-car"></i>
+                                    <i class="fas fa-tablet-alt"></i>
                                 </span>
                             </div>
                             <div class="service-content">
-                                <h2 class="s-title">Toys</h2>
+                                <h2 class="s-title">Ipad</h2>
                             </div>
                         </div>
                     </a>
@@ -148,25 +148,11 @@
                         <div class="service-box">
                             <div class="service-ico">
                                 <span class="ico-circle">
-                                    <i class="ion-calculator"></i>
+                                    <i class="far fa-keyboard"></i>
                                 </span>
                             </div>
                             <div class="service-content">
-                                <h2 class="s-title">Stationary</h2>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 animate__animated animate__fadeInRightBig">
-                    <a href="products.php?type=Toys">
-                        <div class="service-box">
-                            <div class="service-ico">
-                                <span class="ico-circle">
-                                    <i class="ion-calendar"></i>
-                                </span>
-                            </div>
-                            <div class="service-content">
-                                <h2 class="s-title">souvenirs</h2>
+                                <h2 class="s-title">Accessories</h2>
                             </div>
                         </div>
                     </a>
@@ -177,7 +163,7 @@
     <!-- End Services Section -->
     <?php
     if (isset($_SESSION['username'])) {
-        echo '<button class="btn btn-primary float" onclick="logout()"><i class="fa fa-arrow-right"></i></button>';
+        echo '<button class="btn btn-primary float" style="border-color: #7200cf" onclick="logout()"><i class="fa fa-arrow-right"></i></button>';
     }
     ?>
     <!--Preloader-->

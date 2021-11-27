@@ -22,14 +22,14 @@
     <!--Animation.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
-    <title>About us</title>
+    <title>About</title>
 </head>
 
-<body data-new-gr-c-s-check-loaded="8.867.0" id="page-body" style="background-image:url('assets/img/about-bg.jpg'); background-attachment: fixed; background-size: cover;">
+<body data-new-gr-c-s-check-loaded="8.867.0" id="page-body" style="background-image:url('https://images.unsplash.com/photo-1512429234305-12fe5b0b0f07?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'); background-attachment: fixed; background-size: cover;">
     <!--Header / Navbar-->
     <nav id="mainNav" class="navbar navbar-expand-md fixed-top animate__animated animate__slideInDown">
         <div class="container d-flex justify-content-between align-items-center flex-wrap">
-            <div>
+            <div class="order-md-4">
                 <?php
                 session_start();
                 if (!isset($_SESSION['username'])) {
@@ -39,9 +39,9 @@
                 }
                 ?>
             </div>
-            <a href="index.php" class="navbar-brand font-weight-bold" id="projectName">Apple Store</a>
-            <button type="button" class="btn" data-toggle="collapse" data-target="#navbarDefault"><i class="material-icons" id="nav-icon">menu</i></button>
-            <div id="navbarDefault" class="navbar-collapse collapse justify-content-center align-items-center">
+            <div class="order-md-1"><a href="index.php" class="navbar-brand" id="projectName">Apple Store</a></div>
+            <div class=" order-md-2"><button type="button" class="btn" data-toggle="collapse" data-target="#navbarDefault"><i class="material-icons" id="nav-icon">menu</i></button></div>
+            <div id="navbarDefault" class="navbar-collapse order-md-3 collapse justify-content-center align-items-center">
                 <ul class="nav navbar-nav text-uppercase font-weight-bold">
                     <li class="nav-item">
                         <a href="home.php" class="nav-link nav-link-hover">Home</a>
@@ -62,8 +62,9 @@
             </div>
         </div>
     </nav>
-    <!--Abput section-->
-    <section id="about" class="section sect-pt4 d-flex flex-column align-items-center mt-4">
+
+    <!--About section-->
+    <section id="about" class="section d-flex flex-column align-items-center mt-4">
         <!--Item 1-->
         <?php
         require_once "config.php";
@@ -81,70 +82,46 @@
                     $profile,
                     $email,
                     $phone,
-                    $html,
-                    $css,
-                    $php,
-                    $javascript,
                     $detail,
                     $url
                 );
 
                 while ($stmt->fetch()) {
         ?>
-                    <div class="container d-flex justify-content-center align-items-center section-mt-10 animate__animated animate__fadeInLeftBig">
+                    <div class="container d-flex justify-content-center align-items-center section-mt-5 animate__animated animate__fadeInLeftBig">
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="box-shadow-full">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-lg-2 col-md-3 p-0">
                                             <div class="row">
-                                                <div class="col-sm-6 col-md-5">
-                                                    <div class="about-img">
-                                                        <?php echo '<img src="' . $url . '" class="img-fluid rounded b-shadow-a" alt="">' ?>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6 col-md-7">
-                                                    <div>
-                                                        <p><span class="title-s">Name: </span> <span><?php echo $name ?></span></p>
-                                                        <p><span class="title-s">Profile: </span> <span><?php echo $profile ?></span>
-                                                        </p>
-                                                        <p><span class="title-s">Email: </span>
-                                                            <span style="word-break: break-word"><?php echo $email ?></span></p>
-                                                        <p><span class="title-s">Phone: </span> <span><?php echo $phone ?></span></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="skill-mf">
-                                                <p class="title-s">Skill</p>
-                                                <span>HTML</span> <span class="float-right"><?php echo $html ?>%</span>
-                                                <div class="progress">
-                                                    <div class="progress-bar" role="progressbar" style="width:<?php echo $html ?>%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                                <span>CSS3</span> <span class="float-right"><?php echo $css ?>%</span>
-                                                <div class="progress">
-                                                    <div class="progress-bar" role="progressbar" style="width: <?php echo $css ?>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                                <span>PHP</span> <span class="float-right"><?php echo $php ?>%</span>
-                                                <div class="progress">
-                                                    <div class="progress-bar" role="progressbar" style="width: <?php echo $php ?>%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                                <span>JAVASCRIPT</span> <span class="float-right"><?php echo $javascript ?>%</span>
-                                                <div class="progress">
-                                                    <div class="progress-bar" role="progressbar" style="width:<?php echo $javascript ?>%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                                <div>
+                                                    <?php echo '<img src="' . $url . '" class="img-fluid rounded b-shadow-a" width="100%" alt="">' ?>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="pt-4 pt-md-0">
-                                                <div class="title-box-2">
-                                                    <h5 class="title-left">
-                                                        About me
-                                                    </h5>
-                                                </div>
-                                                <p class="lead">
-                                                    <?php echo $detail; ?>
+                                        <div class="col-lg-4 col-md-9">
+                                            <p class="mb-2">
+                                            <div class="title-s d-inline-block pr-1">Name:</div><span style="font-size: 1rem;"><?= $name ?></span></p>
+                                            <p class="mb-2">
+                                            <div class="title-s d-inline-block pr-1">Profile:</div><span style="font-size: 1rem;"><?= $profile ?></span>
+                                            </p>
+                                            <p class="mb-2">
+                                            <div class="title-s d-inline-block pr-1">Email:</div>
+                                            <span style="word-break: break-word; font-size: 1rem;"><?= $email ?></span>
+                                            </p>
+                                            <p class="mb-2">
+                                            <div class="title-s d-inline-block pr-1">Phone:</div><span style="font-size: 1rem;"> <?= $phone ?></span></p>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="title-box-2">
+                                                <p class="title-left">
+                                                    About me
                                                 </p>
                                             </div>
+                                            <p style="font-size: 1rem;">
+                                                <?php echo $detail; ?>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -160,13 +137,13 @@
     </section>
     <?php
     if (isset($_SESSION['username'])) {
-        echo '<button class="btn btn-primary float" onclick="logout()"><i class="fa fa-arrow-right"></i></button>';
+        echo '<button class="btn btn-primary float" style="border-color: #7200cf" onclick="logout()"><i class="fa fa-arrow-right"></i></button>';
     }
     ?>
     <!--Back to to-->
     <a href="#page-body" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
     <!--Preloader-->
+
     <div id="preloader"></div>
 </body>
 
