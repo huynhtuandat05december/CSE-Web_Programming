@@ -27,42 +27,9 @@
 
 <body data-new-gr-c-s-check-loaded="8.867.0" id="page-body" style="background-image:url('https://images.unsplash.com/photo-1512429234305-12fe5b0b0f07?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'); background-attachment: fixed; background-size: cover;">
     <!--Header / Navbar-->
-    <nav id="mainNav" class="navbar navbar-expand-md fixed-top animate__animated animate__slideInDown">
-        <div class="container d-flex justify-content-between align-items-center flex-wrap">
-            <div class="order-md-4">
-                <?php
-                session_start();
-                if (!isset($_SESSION['username'])) {
-                    echo '<button class="login-btn btn btn-outline-primary" onclick="directLogin()">Login</button>';
-                } else {
-                    echo "<button style='font-size:24px' class='btn btn-outline-primary btn-rounded' onclick='directInformation()'><i class='fas fa-user-circle'></i></button>";
-                }
-                ?>
-            </div>
-            <div class="order-md-1"><a href="index.php" class="navbar-brand" id="projectName">Apple Store</a></div>
-            <div class=" order-md-2"><button type="button" class="btn" data-toggle="collapse" data-target="#navbarDefault"><i class="material-icons" id="nav-icon">menu</i></button></div>
-            <div id="navbarDefault" class="navbar-collapse order-md-3 collapse justify-content-center align-items-center">
-                <ul class="nav navbar-nav text-uppercase font-weight-bold">
-                    <li class="nav-item">
-                        <a href="home.php" class="nav-link nav-link-hover">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="about.php" class="nav-link nav-link-hover active-item">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="categories.php" class="nav-link nav-link-hover">Categories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="products.php" class="nav-link nav-link-hover">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact.php" class="nav-link nav-link-hover">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+    <?php
+    require_once 'header.php';
+    ?>
     <!--About section-->
     <section id="about" class="section d-flex flex-column align-items-center mt-4">
         <!--Item 1-->
@@ -135,11 +102,6 @@
         ?>
 
     </section>
-    <?php
-    if (isset($_SESSION['username'])) {
-        echo '<button class="btn btn-primary float" style="border-color: #7200cf" onclick="logout()"><i class="fa fa-arrow-right"></i></button>';
-    }
-    ?>
     <!--Back to to-->
     <a href="#page-body" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
     <!--Preloader-->

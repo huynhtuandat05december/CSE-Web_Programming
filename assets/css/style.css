@@ -1,5 +1,6 @@
 @import url('https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@500&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 :root {
@@ -84,6 +85,8 @@ a:hover {
 #projectName {
   font-size: 1.5rem;
   color: var(--color-active);
+  font-family: 'Sora', sans-serif;
+  font-weight: bold;
 }
 
 #mainNav {
@@ -122,6 +125,14 @@ a:hover {
 }
 .nav-link-hover:hover:before {
   width: 50px;
+}
+
+.navbar .fas {
+  font-size: 24px;
+}
+
+.navbar .navbar-toggler:focus {
+  box-shadow: 0 0 5px 5px var(--color-active);
 }
 
 @media screen and (max-width: 414px) {
@@ -630,15 +641,16 @@ a:hover {
 .validate {
   display: none;
   color: red;
-  margin: 0 0 15px 0;
+  margin: 0 0 15px 0; 
   font-weight: 400;
   font-size: 13px;
 }
 
 .sent-message {
   display: none;
-  color: #fff;
-  background: #18d26e;
+  color: #18d26e;
+  background: #fff;
+  border: 2px solid #18d26e;
   border-radius: 5px;
   text-align: center;
   padding: 15px;
