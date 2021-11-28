@@ -41,7 +41,6 @@ if (!isset($_SESSION['username'])) {
     <!--Conntact Section-->
     <div id="home" class="section d-flex justify-content-center">
         <section class="contact">
-            <div class="overlay-mf"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
