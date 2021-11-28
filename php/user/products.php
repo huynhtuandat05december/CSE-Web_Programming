@@ -130,7 +130,7 @@ session_start();
                                                         <h2 class="w-title font-weight-bold"><?php echo $name ?></h2>
                                                         <p>Description: <?php echo $type ?></p>
                                                         <div class="w-more">
-                                                            <span class="w-category">Price</span>: <span><?php echo $price; ?></span>
+                                                            <span class="w-category">Price</span>: <span><?php echo $price; ?> $</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -177,7 +177,7 @@ session_start();
                                                         <h2 class="w-title font-weight-bold"><?php echo $name ?></h2>
                                                         <p>Description: <?php echo $type ?></p>
                                                         <div class="w-more">
-                                                            <span class="w-category">Price</span>: <span><?php echo $price; ?></span>
+                                                            <span class="w-category">Price</span>: <span><?php echo $price; ?> $</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -225,7 +225,7 @@ session_start();
                                                     <h2 class="w-title font-weight-bold"><?php echo $name ?></h2>
                                                     <p>Description: <?php echo $type ?></p>
                                                     <div class="w-more">
-                                                        <span class="w-category">Price</span>: <span><?php echo $price; ?></span>
+                                                        <span class="w-category">Price</span>: <span><?php echo $price; ?> $</span>
                                                     </div>
                                                 </div>
                                             </div>
