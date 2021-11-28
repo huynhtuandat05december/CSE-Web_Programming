@@ -156,7 +156,6 @@ if (!isset($_SESSION['admin'])) {
                                 <th>User name</th>
 
                                 <th>Email</th>
-                                <th>Password</th>
                                 <th>Full name</th>
                                 <th>URL</th>
                                 <th>Telephone</th>
@@ -195,7 +194,6 @@ if (!isset($_SESSION['admin'])) {
                                             <td><?php echo $username ?></td>
 
                                             <td><?php echo $email ?></td>
-                                            <td><?php echo $password ?></td>
                                             <td><?php echo $full_name ?></td>
                                             <td><?php echo $url ?></td>
                                             <td><?php echo $telephone ?></td>

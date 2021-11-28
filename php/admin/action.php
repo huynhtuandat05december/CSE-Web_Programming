@@ -215,7 +215,7 @@ function addUser($mysqli, $username, $email, $password, $full_name, $url, $phone
 
         $stmt->bind_param('sssssss', $param_username, $param_password, $param_email, $param_fullname, $param_url, $param_telephone, $param_birthday);
         $param_username = $username;
-        $param_password = $password;
+        $param_password = password_hash($password, PASSWORD_DEFAULT);
         $param_email = $email;
         $param_fullname = $full_name;
         $param_url = $url;
