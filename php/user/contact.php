@@ -20,6 +20,7 @@ session_start();
 
     <!--Style file-->
     <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="/assets/js/main.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
     <!--Animation.css-->
@@ -153,7 +154,13 @@ session_start();
     <!--Preloader-->
     <div id="preloader"></div>
     <!-- Script -->
-    <script src="/assets/js/main.js"></script>
+    <script>
+        function openSendMessage() {
+            $('#send-message-us').toggleClass('d-block');
+            $('#get-in-touch').toggleClass('col-md-6');
+            $('#get-in-touch').toggleClass('col-md-12');
+        }
+    </script>
 </body>
 
 </html>

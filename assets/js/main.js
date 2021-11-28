@@ -361,8 +361,3 @@ function searchButton() {
   window.location.href = action;
 }
 
-function openSendMessage() {
-  $('#send-message-us').toggleClass('d-block');
-  $('#get-in-touch').toggleClass('col-md-6');
-  $('#get-in-touch').toggleClass('col-md-12');
-}
