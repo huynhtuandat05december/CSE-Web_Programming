@@ -25,14 +25,14 @@ CREATE TABLE users (
 
 insert INTO product(name, author, type, url, price)
 values (
-        "Apple Watch 7 Thép",
+        "Apple Watch 7 Steel",
         "Apple",
         "Accessories",
         "/assets/img/watchs/watch-1.jpg",
         "899"
     ),
     (
-        "Apple Watch 7 Nhôm",
+        "Apple Watch 7 Aluminium",
         "Apple",
         "Accessories",
         "/assets/img/watchs/watch-2.jpg",
@@ -267,12 +267,12 @@ CREATE TABLE comment (
     detail TEXT(100) NOT NULL
 );
 INSERT INTO comment(product_id, username, time, detail)
-VALUES (1, 'vietduc', '2020-12-27', "Lorem ispum"),
-    (1, 'vietduc', '2020-12-27', "Lorem ispum"),
-    (1, 'vietduc', '2020-12-27', "Lorem ispum"),
-    (1, 'vietduc', '2020-12-27', "Lorem ispum"),
-    (1, 'vietduc', '2020-12-27', "Lorem ispum"),
-    (1, 'vietduc', '2020-12-27', "Lorem ispum");
+VALUES (1, 'vietduc', '2021-11-27', "Lorem ispum"),
+    (1, 'vietduc', '2021-11-27', "Lorem ispum"),
+    (1, 'vietduc', '2021-11-27', "Lorem ispum"),
+    (1, 'vietduc', '2021-11-27', "Lorem ispum"),
+    (1, 'vietduc', '2021-11-27', "Lorem ispum"),
+    (1, 'vietduc', '2021-11-27', "Lorem ispum");
 drop table if exists contact;
 create table contact(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
