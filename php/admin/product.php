@@ -180,7 +180,7 @@ if (!isset($_SESSION['admin'])) {
                                     <td><?php echo $author; ?></td>
                                     <td><?php echo $type; ?></td>
                                     <td><?php echo $url; ?></td>
-                                    <td><?php echo $price; ?></td>
+                                    <td><?php echo "$ " . number_format($price, 2); ?></td>
                                     <th><button class="btn btn-info" data-toggle="collapse" data-target="#comment<?php echo $product_id; ?>" aria-expanded="false" aria-controls="comment<?php echo $product_id; ?>">View comment</button></th>
                                     <td><button class="btn btn-primary" data-toggle="modal" data-target="#productEditModal<?php echo $product_id; ?>">Edit</button></td>
                                     <td><button class="btn btn-danger" onclick="deleteProduct(<?php echo $product_id; ?>)">Delete</button></td>
