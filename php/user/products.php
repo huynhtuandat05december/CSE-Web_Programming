@@ -78,7 +78,7 @@ session_start();
                                 Products
                             </h3>
                             <div class="searchBox d-flex align-items-center">
-                                <input class="searchInput" type="text" name="searchText" id="searchText" placeholder="Input name, type, author, price" onkeypress="searchProducts(event)">
+                                <input class="searchInput" type="text" name="searchText" id="searchText" placeholder="Input name, type, price" onkeypress="searchProducts(event)">
                                 <button class="searchButton" onclick="searchButton()">
                                     <i class="material-icons">
                                         search

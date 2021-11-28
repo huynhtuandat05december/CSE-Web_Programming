@@ -138,23 +138,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <input type="password" name="password" class="form-control animate__animated" id="password" placeholder="Password" data-rule="minlen:4" required data-msg="Please enter at least 4 chars">
                     </div>
                     <span class="text-danger"><?php echo $password_err; ?></span> <!-- fix -->
-                    <a href="#" class="my-2">Forgot your password?</a>
                     <button class="btn btn-outline-primary btn-rounded px-5">Log In</button>
                     <p style="font-style: italic;">Don't have any account? Sign up here</p>
                     <button class="btn btn-primary btn-rounded px-5 ghost" onclick="directSignup()">Sign Up</button>
                 </form>
             </div>
-            <!-- <div class="overlay-container">
-                <div class="overlay">
-                    <div class="overlay-panel overlay-right">
-                        <h1 class="text-white">Welcome back!</h1>
-                        <p>To keep connected with us please login with your personal info!</p>
-                        <br>
-                        <p style="font-style: italic;">Don't have any account? Sign up here</p>
-                        <button class="btn btn-primary btn-rounded px-5 ghost" onclick="directSignup()">Sign Up</button>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
 

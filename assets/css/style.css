@@ -661,6 +661,10 @@ a:hover {
   opacity: 0.2;
 }
 
+.text-info {
+  color:#1e1e1e !important;
+}
+
 .validate {
   display: none;
   color: red;
