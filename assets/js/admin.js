@@ -247,10 +247,6 @@ function editStaff(staff_id) {
     var profile = document.getElementById("profile-edit-" + staff_id).value;
     var email = document.getElementById("email-edit-" + staff_id).value;
     var phone = document.getElementById("phone-edit-" + staff_id).value;
-    var html = document.getElementById("html-edit-" + staff_id).value;
-    var css = document.getElementById("css-edit-" + staff_id).value;
-    var php = document.getElementById("php-edit-" + staff_id).value;
-    var javascript = document.getElementById("javascript-edit-" + staff_id).value;
     var url = document.getElementById("url-edit-" + staff_id).value;
     var detail = document.getElementById("detail-edit-" + staff_id).value;
 
@@ -258,8 +254,13 @@ function editStaff(staff_id) {
         "action.php",
         {
             action: "edit_staff",
-            id: id, name: name, profile: profile, email: email, phone: phone,
-            html: html, css: css, php: php, javascript: javascript, url: url, detail: detail
+            id: id,
+            name: name,
+            profile: profile,
+            email: email,
+            phone: phone,
+            url: url,
+            detail: detail
         },
         function (data, status) {
             alert(data);
@@ -322,6 +323,7 @@ function deleteComment(comment_id) {
 function addUser() {
     var username = document.getElementById('username').value;
     var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
     var full_name = document.getElementById('full-name').value;
     var url = document.getElementById('url').value;
     var telephone = document.getElementById('telephone').value;
@@ -333,6 +335,7 @@ function addUser() {
             action: "add_user",
             username: username,
             email: email,
+            password: password,
             full_name: full_name,
             url: url,
             telephone: telephone,

@@ -197,24 +197,25 @@ function changeInfo($mysqli, $address, $phone, $email, $detail)
 if ($action == "add_user") {
     $username = $_POST['username'];
     $email = $_POST['email'];
+    $password = $_POST['password'];
     $full_name = $_POST['full_name'];
     $url = $_POST['url'];
     $phone = $_POST['telephone'];
     $birthday = $_POST['birthday'];
 
-    echo addUser($mysqli, $username, $email, $full_name, $url, $phone, $birthday);
+    echo addUser($mysqli, $username, $email, $password, $full_name, $url, $phone, $birthday);
 }
 
-function addUser($mysqli, $username, $email, $full_name, $url, $phone, $birthday)
+function addUser($mysqli, $username, $email, $password, $full_name, $url, $phone, $birthday)
 {
-    $password = $param_username = $param_email = $param_fullname = $param_url = $param_telephone = $param_birthday = NULL;
-    $sql = "INSERT INTO users (username, password, email, full_name, url, telephone) VALUES (?,?,?,?,?,?)";
+    $param_password = $param_username = $param_email = $param_fullname = $param_url = $param_telephone = $param_birthday = NULL;
+    $sql = "INSERT INTO users (username, password, email, full_name, url, telephone,date_of_birth) VALUES (?,?,?,?,?,?,?)";
     $mysqli->prepare($sql);
     if ($stmt = $mysqli->prepare($sql)) {
 
-        $stmt->bind_param('ssssss', $param_username, $password, $param_email, $param_fullname, $param_url, $param_telephone);
+        $stmt->bind_param('sssssss', $param_username, $param_password, $param_email, $param_fullname, $param_url, $param_telephone, $param_birthday);
         $param_username = $username;
-        $password = '123456';
+        $param_password = $password;
         $param_email = $email;
         $param_fullname = $full_name;
         $param_url = $url;
@@ -293,6 +294,7 @@ function deleteUser($mysqli, $id)
         $param_id = $id;
 
         if ($stmt->execute()) {
+            $mysqli->query("ALTER TABLE users AUTO_INCREMENT=1");
             return "Delete user successfully!";
         } else {
             return "SQL executed incorrectly!";
@@ -348,32 +350,24 @@ if ($action == "edit_staff") {
     $profile = $_POST['profile'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
-    $html = $_POST['html'];
-    $css = $_POST['css'];
-    $php = $_POST['php'];
-    $javascript = $_POST['javascript'];
     $url = $_POST['url'];
     $detail = $_POST['detail'];
 
     $id = $_POST['id'];
-    echo editStaff($mysqli, $id, $name, $profile, $email, $phone, $html, $css, $php, $javascript, $url, $detail);
+    echo editStaff($mysqli, $id, $name, $profile, $email, $phone, $url, $detail);
 }
-function editStaff($mysqli, $id, $name, $profile, $email, $phone, $html, $css, $php, $javascript, $url, $detail)
+function editStaff($mysqli, $id, $name, $profile, $email, $phone, $url, $detail)
 {
-    $param_name = $param_profile = $param_email = $param_phone = $param_html = $param_css = $param_php = $param_javascript = $param_detail = $param_url = $param_id = NULL;
-    $sql = "UPDATE staff SET name=?,profile=?, email=?,phone=?,html=?,css=?,php=?,javascript=?,url=?,detail=? where id=?";
+    $param_name = $param_profile = $param_email = $param_phone =  $param_detail = $param_url = $param_id = NULL;
+    $sql = "UPDATE staff SET name=?,profile=?, email=?,phone=?,url=?,detail=? where id=?";
 
     if ($stmt = $mysqli->prepare($sql)) {
         $stmt->bind_param(
-            'ssssiiiissi',
+            'ssssssi',
             $param_name,
             $param_profile,
             $param_email,
             $param_phone,
-            $param_html,
-            $param_css,
-            $param_php,
-            $param_javascript,
             $param_url,
             $param_detail,
             $param_id
@@ -383,10 +377,6 @@ function editStaff($mysqli, $id, $name, $profile, $email, $phone, $html, $css, $
         $param_profile = $profile;
         $param_email = $email;
         $param_phone = $phone;
-        $param_html = $html;
-        $param_css = $css;
-        $param_php = $php;
-        $param_javascript = $javascript;
         $param_url = $url;
         $param_detail = $detail;
 
