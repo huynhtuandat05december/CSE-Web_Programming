@@ -264,7 +264,8 @@ CREATE TABLE comment (
     product_id INT NOT NULL,
     username VARCHAR(50) NOT NULL,
     time DATE NOT NULL,
-    detail TEXT(100) NOT NULL
+    detail TEXT(100) NOT NULL,
+    FOREIGN KEY (product_id) REFERENCES product(id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 INSERT INTO comment(product_id, username, time, detail)
 VALUES (1, 'vietduc', '2021-11-27', "Lorem ispum"),
