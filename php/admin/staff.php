@@ -332,7 +332,7 @@ if (!isset($_SESSION['admin'])) {
                             <div class="form-group row align-items-center">
                                 <label for="details-edit-<?php echo $staff[$index][0]; ?>" class="col-2 col-form-label"><strong>Detail</strong></label>
                                 <div class="col-10">
-                                    <textarea rows="5" class="form-control" type="" id="detail-edit-<?php echo $staff[$index][0]; ?>"><?php echo $staff[$index][10]; ?></textarea>
+                                    <textarea rows="5" class="form-control" type="" id="detail-edit-<?php echo $staff[$index][0]; ?>"><?php echo $staff[$index][6]; ?></textarea>
                                 </div>
                                 <span class="text-danger" id="detailErr"></span>
                             </div>

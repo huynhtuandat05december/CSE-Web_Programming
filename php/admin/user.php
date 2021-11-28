@@ -156,6 +156,7 @@ if (!isset($_SESSION['admin'])) {
                                 <th>User name</th>
 
                                 <th>Email</th>
+                                <th>Password</th>
                                 <th>Full name</th>
                                 <th>URL</th>
                                 <th>Telephone</th>
@@ -194,6 +195,7 @@ if (!isset($_SESSION['admin'])) {
                                             <td><?php echo $username ?></td>
 
                                             <td><?php echo $email ?></td>
+                                            <td><?php echo $password ?></td>
                                             <td><?php echo $full_name ?></td>
                                             <td><?php echo $url ?></td>
                                             <td><?php echo $telephone ?></td>
@@ -236,6 +238,13 @@ if (!isset($_SESSION['admin'])) {
                             </div>
                             <span class="text-danger" id="usernameErr"></span>
                         </div>
+                        <div class="form-group row align-items-center justify-content-center">
+                            <label for="password" class="col-2 col-form-label"><strong>Password</strong></label>
+                            <div class="col-10">
+                                <input class="form-control" type="text" value="" id="password">
+                            </div>
+                            <span class="text-danger" id="passwordErr"></span>
+                        </div>
                         <div class="form-group row align-items-center">
                             <label for="email" class="col-2 col-form-label"><strong>Email</strong></label>
                             <div class="col-10">
@@ -267,7 +276,7 @@ if (!isset($_SESSION['admin'])) {
                         <div class="form-group row align-items-center justify-content-center">
                             <label for="birthday" class="col-2 col-form-label"><strong>Birthday</strong></label>
                             <div class="col-10">
-                                <input class="form-control" type="url" value="" id="birthday">
+                                <input class="form-control" type="date" value="" id="birthday">
                             </div>
                             <span class="text-danger" id="birthdayErr"></span>
                         </div>
